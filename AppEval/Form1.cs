@@ -15,6 +15,8 @@ namespace AppEval
         public Form1()
         {
             InitializeComponent();
+            Passerelle.Connexion();
         }
+        
     }
 }
