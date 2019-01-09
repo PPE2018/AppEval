@@ -15,7 +15,7 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-                
+                Test
             }
         }
     }
