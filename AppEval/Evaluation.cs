@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace AppEval
 {
-    public partial class Form1 : Form
+    public partial class Evaluation : Form
     {
-        public Form1()
+        public Evaluation()
         {
             InitializeComponent();
-            Passerelle.Connexion();
         }
-        
     }
 }
