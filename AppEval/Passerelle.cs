@@ -9,25 +9,9 @@ namespace AppEval
 {
     public static class Passerelle
     {
-        public static void Connexion()
-        {
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
-            {
-                conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT id_critere, libelle_critere FROM critere", conn))
-                using (var reader = cmd.ExecuteReader())
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader.GetInt32(0));
-                    Console.WriteLine(reader.GetString(1));
-                }
-            }
-        }
-
         public static void AjoutCritere(string unNom, int unCoeff)
         {
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
