@@ -16,14 +16,34 @@ namespace AppEval
         public AjoutCritere()
         {
             InitializeComponent();
-            Passerelle.Connexion();
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             string nom = txtNom.Text;
-            int coeff = int.Parse(txtCoeff.Text);
-            Passerelle.AjoutCritere(nom, coeff);
+            string coeffText = txtCoeff.Text;
+            int coeff;
+            if (coeffText != "" && nom != "")
+            {
+                try
+                {
+                    coeff = int.Parse(coeffText);
+                    Passerelle.AjoutCritere(nom, coeff);
+                    Valider.Visible = true;
+                    Valider.Text = "Envoyé !";
+                }
+                catch
+                {
+                    MessageBox.Show("Le coefficient doit être un numérique !");
+                }
+               
+                
+            }
+            else
+            {
+                MessageBox.Show("Vous devez completer tout les champs !");
+            }
+            
         }
     }
 }

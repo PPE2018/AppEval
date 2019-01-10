@@ -76,6 +76,9 @@
     <EmbeddedResource Include="AjoutCritere.resx">
       <DependentUpon>AjoutCritere.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Evaluation.resx">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

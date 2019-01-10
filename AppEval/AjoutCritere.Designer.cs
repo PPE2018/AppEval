@@ -34,6 +34,7 @@
             this.txtCoeff = new System.Windows.Forms.TextBox();
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Valider = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Valider);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.buttonAjouter);
             this.groupBox1.Controls.Add(this.label2);
@@ -88,16 +90,26 @@
             this.groupBox1.Controls.Add(this.txtNom);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 161);
+            this.groupBox1.Size = new System.Drawing.Size(208, 143);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajouter un Critère";
+            // 
+            // Valider
+            // 
+            this.Valider.AutoSize = true;
+            this.Valider.Location = new System.Drawing.Point(60, 116);
+            this.Valider.Name = "Valider";
+            this.Valider.Size = new System.Drawing.Size(50, 13);
+            this.Valider.TabIndex = 7;
+            this.Valider.Text = "Message";
+            this.Valider.Visible = false;
             // 
             // AjoutCritere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 247);
+            this.ClientSize = new System.Drawing.Size(232, 167);
             this.Controls.Add(this.groupBox1);
             this.Name = "AjoutCritere";
             this.Text = "Form1";
@@ -115,6 +127,7 @@
         private System.Windows.Forms.TextBox txtCoeff;
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label Valider;
     }
 }
 
