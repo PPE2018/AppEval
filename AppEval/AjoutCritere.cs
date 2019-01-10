@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace AppEval
 {
@@ -21,16 +22,8 @@ namespace AppEval
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             string nom = txtNom.Text;
-            
-
-            // Insert some data
-            using (var cmd = new NpgsqlCommand())
-            {
-                cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO data (some_field) VALUES (@p)";
-                cmd.Parameters.AddWithValue("p", "Hello world");
-                cmd.ExecuteNonQuery();
-            }
+            int coeff = int.Parse(txtCoeff.Text);
+            Passerelle.AjoutCritere(nom, coeff);
         }
     }
 }
