@@ -11,7 +11,7 @@ namespace AppEval
     {
         public static void Connexion()
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
