@@ -11,7 +11,7 @@ namespace AppEval
     {
         public static void Connexion()
         {
-            var connString = "Host=localhost;Username=openpg;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -27,7 +27,7 @@ namespace AppEval
 
         public static void AjoutCritere(string unNom, int unCoeff)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
