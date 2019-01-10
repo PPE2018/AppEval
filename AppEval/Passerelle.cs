@@ -11,11 +11,10 @@ namespace AppEval
     {
         public static void Connexion()
         {
-            var connString = "Host=localhost;Username=;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-                
             }
         }
     }
