@@ -29,9 +29,10 @@ namespace AppEval
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            //this.Close();            
+            this.Hide();
             AjoutCritere c = new AjoutCritere();
             c.Show();
+            
         }
     }
 }

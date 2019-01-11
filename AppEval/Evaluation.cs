@@ -22,7 +22,7 @@ namespace AppEval
             int n = 0;
             foreach (Associer a in Passerelle.GetLesAssociations())
             {
-                tableauEvaluation.Rows[n] = (a.GetCoeff());
+                //tableauEvaluation.Rows[n] = (a.GetCoeff());
                 n++;
             }
         }
