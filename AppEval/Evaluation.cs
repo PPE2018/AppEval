@@ -15,16 +15,15 @@ namespace AppEval
         public Evaluation()
         {
             InitializeComponent();
-            foreach (Critere c in Passerelle.GetLesCriteres())
+            foreach(KeyValuePair<string, int> kvp in Passerelle.GetCritereCoeff())
             {
-                tableauEvaluation.Rows.Add(c.GetLibelle());
+                tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
-            int n = 0;
-            foreach (Associer a in Passerelle.GetLesAssociations())
-            {
-                tableauEvaluation.Rows[n] = (a.GetCoeff());
-                n++;
-            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
