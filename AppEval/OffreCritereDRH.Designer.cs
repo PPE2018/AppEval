@@ -28,43 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Offres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supprimer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OffreCritere = new System.Windows.Forms.DataGridView();
             this.labelNom = new System.Windows.Forms.Label();
             this.buttonAjouter = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modifier = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // OffreCritere
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Offres,
+            this.OffreCritere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.OffreCritere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Critères,
             this.Modifier,
             this.Supprimer});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(422, 161);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Offres
-            // 
-            this.Offres.HeaderText = "Offres";
-            this.Offres.Name = "Offres";
-            this.Offres.ReadOnly = true;
-            // 
-            // Modifier
-            // 
-            this.Modifier.HeaderText = "Modifier";
-            this.Modifier.Name = "Modifier";
-            // 
-            // Supprimer
-            // 
-            this.Supprimer.HeaderText = "Supprimer";
-            this.Supprimer.Name = "Supprimer";
+            this.OffreCritere.Location = new System.Drawing.Point(131, 84);
+            this.OffreCritere.Name = "OffreCritere";
+            this.OffreCritere.Size = new System.Drawing.Size(466, 197);
+            this.OffreCritere.TabIndex = 0;
             // 
             // labelNom
             // 
@@ -79,12 +62,38 @@
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(208, 322);
+            this.buttonAjouter.Location = new System.Drawing.Point(250, 330);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(298, 76);
+            this.buttonAjouter.Size = new System.Drawing.Size(249, 46);
             this.buttonAjouter.TabIndex = 2;
             this.buttonAjouter.Text = "Ajouter un critère";
             this.buttonAjouter.UseVisualStyleBackColor = true;
+            this.buttonAjouter.Click += new System.EventHandler(this.buttonAjouter_Click);
+            // 
+            // Critères
+            // 
+            this.Critères.HeaderText = "Critères";
+            this.Critères.Name = "Critères";
+            this.Critères.ReadOnly = true;
+            this.Critères.Width = 200;
+            // 
+            // Modifier
+            // 
+            this.Modifier.HeaderText = "Modifier";
+            this.Modifier.Name = "Modifier";
+            this.Modifier.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Modifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Modifier.Text = "Modifier";
+            this.Modifier.UseColumnTextForButtonValue = true;
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.HeaderText = "Supprimer";
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Supprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Supprimer.Text = "Supprimer";
+            this.Supprimer.UseColumnTextForButtonValue = true;
             // 
             // OffreCritereDRH
             // 
@@ -93,10 +102,10 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.labelNom);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.OffreCritere);
             this.Name = "OffreCritereDRH";
             this.Text = "OffreDRH";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,11 +113,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Offres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modifier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supprimer;
+        private System.Windows.Forms.DataGridView OffreCritere;
         private System.Windows.Forms.Label labelNom;
         private System.Windows.Forms.Button buttonAjouter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
+        private System.Windows.Forms.DataGridViewButtonColumn Modifier;
+        private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
     }
 }

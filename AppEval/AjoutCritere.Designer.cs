@@ -69,6 +69,7 @@
             this.txtCoeff.Name = "txtCoeff";
             this.txtCoeff.Size = new System.Drawing.Size(100, 20);
             this.txtCoeff.TabIndex = 4;
+            this.txtCoeff.TextChanged += new System.EventHandler(this.txtCoeff_TextChanged);
             // 
             // buttonAjouter
             // 

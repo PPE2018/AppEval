@@ -44,7 +44,7 @@ namespace AppEval
         public static List<Critere> GetLesCriteres()
         {
             List<Critere> listCritere = new List<Critere>();
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();

@@ -15,16 +15,23 @@ namespace AppEval
         public OffreCritereDRH()
         {
             InitializeComponent();
+            foreach(Critere c in Passerelle.GetLesCriteres())
+            {
+                OffreCritere.Rows.Add(c.GetLibelle());
+            }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void labelNom_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAjouter_Click(object sender, EventArgs e)
+        {
+            //this.Close();            
+            AjoutCritere c = new AjoutCritere();
+            c.Show();
         }
     }
 }

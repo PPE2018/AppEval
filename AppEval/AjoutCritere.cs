@@ -47,5 +47,10 @@ namespace AppEval
             }
             
         }
+
+        private void txtCoeff_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
