@@ -64,6 +64,8 @@
     <Compile Include="AjoutCritere.Designer.cs">
       <DependentUpon>AjoutCritere.cs</DependentUpon>
     </Compile>
+    <Compile Include="Associer.cs" />
+    <Compile Include="Critere.cs" />
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,7 +9,7 @@ namespace AppEval
 {
     public static class Passerelle
     {
-        public static void AjoutCritere(string unNom, int unCoeff)
+        public static void AjoutCritere(Critere unCritere, Associer uneAssociation)
         {
             var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
@@ -19,7 +19,7 @@ namespace AppEval
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "INSERT INTO critere (id_critere, libelle_critere) VALUES (DEFAULT, '" + unNom + "')";
+                    cmd.CommandText = "INSERT INTO critere (id_critere, libelle_critere) VALUES (DEFAULT, '" + unCritere.GetLibelle() + "')";
                     cmd.ExecuteNonQuery();
                 }
 
@@ -34,10 +34,31 @@ namespace AppEval
                 {
                     cmd3.Connection = conn;
                     //Id de l'offre à changer
-                    cmd3.CommandText = "INSERT INTO associer (id_critere, id_offre, coefficient) VALUES ("+ id +", 1," + unCoeff + ")";
+                    cmd3.CommandText = "INSERT INTO associer (id_critere, id_offre, coefficient) VALUES ("+ id +", 1," + uneAssociation.GetCoeff() + ")";
                     cmd3.ExecuteNonQuery();
                 }
+                conn.Close();
             }
+        }
+
+        public static List<Critere> GetLesCriteres()
+        {
+            List<Critere> listCritere = new List<Critere>();
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, id_critere FROM critere", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Critere unCritere = new Critere(reader.GetString(0), reader.GetInt32(1));
+                        listCritere.Add(unCritere);
+                    }
+                conn.Close();
+            }
+            return listCritere;
         }
     }
 }
