@@ -20,15 +20,17 @@ namespace AppEval
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            string nom = txtNom.Text;
+            string libelle = txtNom.Text;
             string coeffText = txtCoeff.Text;
             int coeff;
-            if (coeffText != "" && nom != "")
+            if (coeffText != "" && libelle != "")
             {
                 try
                 {
                     coeff = int.Parse(coeffText);
-                    Passerelle.AjoutCritere(nom, coeff);
+                    Critere unCritere = new Critere(libelle);
+                    Associer uneAssociation = new Associer(coeff);
+                    Passerelle.AjoutCritere(unCritere, uneAssociation);
                     Valider.Visible = true;
                     Valider.Text = "Envoyé !";
                 }
