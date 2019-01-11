@@ -34,5 +34,11 @@ namespace AppEval
             c.Show();
             
         }
+
+        private void bttnSupprimer_Click(object sender, EventArgs e)
+        {
+            int index = this.OffreCritere.CurrentRow.Index;
+            this.OffreCritere.Rows.RemoveAt(index);
+        }
     }
 }

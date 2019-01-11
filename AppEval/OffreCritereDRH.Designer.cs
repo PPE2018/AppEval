@@ -33,7 +33,7 @@
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modifier = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Supprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.bttnSupprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +42,10 @@
             this.OffreCritere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OffreCritere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Critères,
-            this.Modifier,
-            this.Supprimer});
-            this.OffreCritere.Location = new System.Drawing.Point(131, 84);
+            this.Modifier});
+            this.OffreCritere.Location = new System.Drawing.Point(35, 68);
             this.OffreCritere.Name = "OffreCritere";
-            this.OffreCritere.Size = new System.Drawing.Size(466, 197);
+            this.OffreCritere.Size = new System.Drawing.Size(343, 256);
             this.OffreCritere.TabIndex = 0;
             // 
             // labelNom
@@ -62,7 +61,7 @@
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(250, 330);
+            this.buttonAjouter.Location = new System.Drawing.Point(70, 339);
             this.buttonAjouter.Name = "buttonAjouter";
             this.buttonAjouter.Size = new System.Drawing.Size(249, 46);
             this.buttonAjouter.TabIndex = 2;
@@ -86,20 +85,22 @@
             this.Modifier.Text = "Modifier";
             this.Modifier.UseColumnTextForButtonValue = true;
             // 
-            // Supprimer
+            // bttnSupprimer
             // 
-            this.Supprimer.HeaderText = "Supprimer";
-            this.Supprimer.Name = "Supprimer";
-            this.Supprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Supprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Supprimer.Text = "Supprimer";
-            this.Supprimer.UseColumnTextForButtonValue = true;
+            this.bttnSupprimer.Location = new System.Drawing.Point(503, 80);
+            this.bttnSupprimer.Name = "bttnSupprimer";
+            this.bttnSupprimer.Size = new System.Drawing.Size(260, 54);
+            this.bttnSupprimer.TabIndex = 3;
+            this.bttnSupprimer.Text = "Supprimer";
+            this.bttnSupprimer.UseVisualStyleBackColor = true;
+            this.bttnSupprimer.Click += new System.EventHandler(this.bttnSupprimer_Click);
             // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bttnSupprimer);
             this.Controls.Add(this.buttonAjouter);
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.OffreCritere);
@@ -118,6 +119,6 @@
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
         private System.Windows.Forms.DataGridViewButtonColumn Modifier;
-        private System.Windows.Forms.DataGridViewButtonColumn Supprimer;
+        private System.Windows.Forms.Button bttnSupprimer;
     }
 }
