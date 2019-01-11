@@ -29,9 +29,16 @@ namespace AppEval
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            //this.Close();            
+            this.Hide();
             AjoutCritere c = new AjoutCritere();
             c.Show();
+            
+        }
+
+        private void bttnSupprimer_Click(object sender, EventArgs e)
+        {
+            int index = this.OffreCritere.CurrentRow.Index;
+            this.OffreCritere.Rows.RemoveAt(index);
         }
     }
 }

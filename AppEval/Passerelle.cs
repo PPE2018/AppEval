@@ -64,7 +64,7 @@ namespace AppEval
         public static List<Associer> GetLesAssociations()
         {
             List<Associer> listAssociation = new List<Associer>();
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();

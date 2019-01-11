@@ -72,6 +72,7 @@
     <Compile Include="Evaluation.Designer.cs">
       <DependentUpon>Evaluation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Offre.cs" />
     <Compile Include="OffreCritereDRH.cs">
       <SubType>Form</SubType>
     </Compile>
