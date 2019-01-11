@@ -72,11 +72,11 @@
     <Compile Include="Evaluation.Designer.cs">
       <DependentUpon>Evaluation.cs</DependentUpon>
     </Compile>
-    <Compile Include="OffreDRH.cs">
+    <Compile Include="OffreCritereDRH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OffreDRH.Designer.cs">
-      <DependentUpon>OffreDRH.cs</DependentUpon>
+    <Compile Include="OffreCritereDRH.Designer.cs">
+      <DependentUpon>OffreCritereDRH.cs</DependentUpon>
     </Compile>
     <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
@@ -86,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Evaluation.resx">
       <DependentUpon>Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OffreCritereDRH.resx">
+      <DependentUpon>OffreCritereDRH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

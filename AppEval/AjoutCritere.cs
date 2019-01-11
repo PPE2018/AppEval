@@ -30,9 +30,12 @@ namespace AppEval
                     coeff = int.Parse(coeffText);
                     Critere unCritere = new Critere(libelle);
                     Associer uneAssociation = new Associer(coeff);
+                    
                     Passerelle.AjoutCritere(unCritere, uneAssociation);
+                    MessageBox.Show("coeff ok");
                     Valider.Visible = true;
                     Valider.Text = "Envoyé !";
+
                 }
                 catch
                 {
