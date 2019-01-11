@@ -33,7 +33,7 @@ namespace AppEval
                 using (var cmd3 = new NpgsqlCommand())
                 {
                     cmd3.Connection = conn;
-                    //Id de l'offre à changer
+                    //Id de l'offre à changer !!!
                     cmd3.CommandText = "INSERT INTO associer (id_critere, id_offre, coefficient) VALUES ("+ id +", 1," + uneAssociation.GetCoeff() + ")";
                     cmd3.ExecuteNonQuery();
                 }
@@ -49,7 +49,7 @@ namespace AppEval
             {
                 conn.Open();
 
-                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, id_critere FROM critere", conn))
+                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, id_critere FROM critere ORDER BY id_critere", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -59,6 +59,26 @@ namespace AppEval
                 conn.Close();
             }
             return listCritere;
+        }
+
+        public static List<Associer> GetLesAssociations()
+        {
+            List<Associer> listAssociation = new List<Associer>();
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT coefficient, id_critere, id_offre FROM associer ORDER BY id_critere", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Associer uneAssociation = new Associer(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2));
+                        listAssociation.Add(uneAssociation);
+                    }
+                conn.Close();
+            }
+            return listAssociation;
         }
     }
 }
