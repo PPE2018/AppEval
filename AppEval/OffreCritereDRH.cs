@@ -21,12 +21,6 @@ namespace AppEval
             }
         }
 
-
-        private void labelNom_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,5 +34,6 @@ namespace AppEval
             int index = this.OffreCritere.CurrentRow.Index;
             this.OffreCritere.Rows.RemoveAt(index);
         }
+
     }
 }
