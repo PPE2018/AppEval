@@ -11,7 +11,7 @@ namespace AppEval
     {
         public static void AjoutCritere(Critere unCritere, Associer uneAssociation)
         {
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -44,7 +44,7 @@ namespace AppEval
         public static List<Critere> GetLesCriteres()
         {
             List<Critere> listCritere = new List<Critere>();
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -79,6 +79,25 @@ namespace AppEval
                 conn.Close();
             }
             return listAssociation;
+        }
+
+        public static Dictionary<string, int> GetCritereCoeff()
+        {
+            Dictionary<string, int> critereCoeff = new Dictionary<string, int>();
+            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM associer INNER JOIN critere ON associer.id_critere = critere.id_critere", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        critereCoeff.Add(reader.GetString(0), reader.GetInt32(1));
+                    }
+                conn.Close();
+            }
+            return critereCoeff;
         }
     }
 }
