@@ -52,5 +52,10 @@ namespace AppEval
 
             
         }
+
+        private void AjoutCritere_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
