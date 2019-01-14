@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.tableauEvaluation = new System.Windows.Forms.DataGridView();
-            this.Criteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coefficient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Criteres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coefficient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,27 +58,6 @@
             this.tableauEvaluation.Name = "tableauEvaluation";
             this.tableauEvaluation.Size = new System.Drawing.Size(662, 185);
             this.tableauEvaluation.TabIndex = 0;
-            // 
-            // Criteres
-            // 
-            this.Criteres.HeaderText = "Critères";
-            this.Criteres.Name = "Criteres";
-            this.Criteres.ReadOnly = true;
-            this.Criteres.Width = 200;
-            // 
-            // Coefficient
-            // 
-            this.Coefficient.HeaderText = "Coefficient";
-            this.Coefficient.Name = "Coefficient";
-            this.Coefficient.ReadOnly = true;
-            this.Coefficient.Width = 200;
-            // 
-            // Note
-            // 
-            this.Note.HeaderText = "Note";
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            this.Note.Width = 200;
             // 
             // textBox1
             // 
@@ -122,6 +101,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Evaluer";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(129, 322);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 325);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Bonus/Malus (-10/+10) :";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -149,21 +144,25 @@
             this.button2.Text = "PDF";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // Criteres
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Bonus/Malus (-10/+10) :";
+            this.Criteres.HeaderText = "Critères";
+            this.Criteres.Name = "Criteres";
+            this.Criteres.ReadOnly = true;
+            this.Criteres.Width = 200;
             // 
-            // textBox2
+            // Coefficient
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 322);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.Coefficient.HeaderText = "Coefficient";
+            this.Coefficient.Name = "Coefficient";
+            this.Coefficient.ReadOnly = true;
+            this.Coefficient.Width = 200;
+            // 
+            // Note
+            // 
+            this.Note.HeaderText = "Note";
+            this.Note.Name = "Note";
+            this.Note.Width = 200;
             // 
             // Evaluation
             // 
@@ -194,10 +193,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Criteres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Coefficient;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
     }
 }
