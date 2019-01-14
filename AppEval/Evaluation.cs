@@ -23,7 +23,13 @@ namespace AppEval
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            for(int i=0; i < tableauEvaluation.RowCount; i++)
+            {
+                for (int n = 0; n < tableauEvaluation.ColumnCount; n++)
+                {
+                    Console.WriteLine(tableauEvaluation[n, i].Value);
+                }
+            }
         }
     }
 }
