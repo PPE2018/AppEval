@@ -11,7 +11,7 @@ namespace AppEval
     {
         public static void AjoutCritere(Critere unCritere, Associer uneAssociation)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -44,7 +44,7 @@ namespace AppEval
         public static List<Critere> GetLesCriteres()
         {
             List<Critere> listCritere = new List<Critere>();
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
@@ -84,7 +84,7 @@ namespace AppEval
         public static Dictionary<string, int> GetCritereCoeff()
         {
             Dictionary<string, int> critereCoeff = new Dictionary<string, int>();
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();

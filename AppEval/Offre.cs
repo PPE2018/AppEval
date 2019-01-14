@@ -18,6 +18,21 @@ namespace AppEval
         private bool supprimer;
         private DateTime dateLimiteOffre;
 
+        public Offre(string unLibelle, string unLieu)
+        {
+            this.libelle = unLibelle;
+            this.lieu = unLieu;
+        }
+
+        public string GetLibelle()
+        {
+            return this.libelle;
+        }
+
+        public string GetLieu()
+        {
+            return this.lieu;
+        }
         public Offre(string unLibelle, string uneDescription, string unLieu, string unTypeContrat, double unSalaire, 
             DateTime uneDateLimite, string uneVideo,DateTime uneDateLimiteOffre)
         {

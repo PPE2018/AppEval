@@ -35,9 +35,9 @@
             this.listBoxOffre = new System.Windows.Forms.ListBox();
             this.dateTimePickerDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
+            this.labelDateLimite = new System.Windows.Forms.Label();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
-            this.labelDateLimite = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
@@ -84,8 +84,9 @@
             this.listBoxOffre.FormattingEnabled = true;
             this.listBoxOffre.Location = new System.Drawing.Point(73, 22);
             this.listBoxOffre.Name = "listBoxOffre";
-            this.listBoxOffre.Size = new System.Drawing.Size(160, 17);
+            this.listBoxOffre.Size = new System.Drawing.Size(163, 43);
             this.listBoxOffre.TabIndex = 4;
+            this.listBoxOffre.SelectedIndexChanged += new System.EventHandler(this.listBoxOffre_SelectedIndexChanged);
             // 
             // dateTimePickerDateLimite
             // 
@@ -111,6 +112,15 @@
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
             // 
+            // labelDateLimite
+            // 
+            this.labelDateLimite.AutoSize = true;
+            this.labelDateLimite.Location = new System.Drawing.Point(277, 22);
+            this.labelDateLimite.Name = "labelDateLimite";
+            this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
+            this.labelDateLimite.TabIndex = 7;
+            this.labelDateLimite.Text = "Date Limite :";
+            // 
             // labelOfres
             // 
             this.labelOfres.AutoSize = true;
@@ -128,15 +138,7 @@
             this.buttonModifier.TabIndex = 4;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
-            // 
-            // labelDateLimite
-            // 
-            this.labelDateLimite.AutoSize = true;
-            this.labelDateLimite.Location = new System.Drawing.Point(277, 22);
-            this.labelDateLimite.Name = "labelDateLimite";
-            this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
-            this.labelDateLimite.TabIndex = 7;
-            this.labelDateLimite.Text = "Date Limite :";
+            this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
             // OffreCritereDRH
             // 
