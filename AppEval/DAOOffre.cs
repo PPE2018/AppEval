@@ -9,15 +9,15 @@ namespace AppEval
 {
     public static class DAOOffre
     {
-        public static List<Offre> GetLesOffres()
+        public static List<Offre> GetLesOffres(int unIdOffre)
         {
+
             List<Offre> listOffres = new List<Offre>();
             var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-                using (var cmd = new NpgsqlCommand("SELECT libelle, lieu FROM offre_emplois ORDER BY libelle", conn))
+                using (var cmd = new NpgsqlCommand("SELECT  libelle, lieu FROM offre_emplois WHERE id_offre= "+unIdOffre, conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {

@@ -15,7 +15,8 @@ namespace AppEval
         public OffreCritereDRH()
         {
             InitializeComponent();
-            foreach (Offre o in DAOOffre.GetLesOffres())
+            
+            foreach (Offre o in DAOOffre.GetLesOffres(1))
             {
                 listBoxOffre.Items.Add(o.GetLibelle()+" "+ o.GetLieu());
 
