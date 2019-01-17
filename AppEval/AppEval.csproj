@@ -66,6 +66,8 @@
     </Compile>
     <Compile Include="Associer.cs" />
     <Compile Include="Critere.cs" />
+    <Compile Include="DAOAssocier.cs" />
+    <Compile Include="DAOCritere.cs" />
     <Compile Include="DAOOffre.cs" />
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
@@ -80,7 +82,6 @@
     <Compile Include="OffreCritereDRH.Designer.cs">
       <DependentUpon>OffreCritereDRH.cs</DependentUpon>
     </Compile>
-    <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AjoutCritere.resx">

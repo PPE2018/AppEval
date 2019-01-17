@@ -13,8 +13,10 @@ namespace AppEval
 {
     public partial class AjoutCritere : Form
     {
-        public AjoutCritere()
+        int idOffre;
+        public AjoutCritere(int unIdOffre)
         {
+            this.idOffre = unIdOffre;
             InitializeComponent();
         }
 
@@ -30,7 +32,7 @@ namespace AppEval
                     coeff = int.Parse(coeffText);
                     Critere unCritere = new Critere(libelle);
                     Associer uneAssociation = new Associer(coeff);                  
-                    Passerelle.AjoutCritere(unCritere, uneAssociation);
+                    DAOCritere.AjoutCritere(unCritere, uneAssociation, idOffre);
                     Valider.Visible = true;
                     Valider.Text = "Envoyé !";
 
