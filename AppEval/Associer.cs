@@ -28,5 +28,13 @@ namespace AppEval
         {
             return this.coefficient;
         }
+        public int GetIdCritere()
+        {
+            return this.idCritere;
+        }
+        public int GetIdOffre()
+        {
+            return this.idOffre;
+        }
     }
 }

@@ -26,5 +26,9 @@ namespace AppEval
         {
             return this.libelle;
         }
+        public int GetId()
+        {
+            return this.id;
+        }
     }
 }

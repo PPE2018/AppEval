@@ -8,6 +8,7 @@ namespace AppEval
 {
     public static class DAOCritere
     {
+
         public static void AjoutCritere(Critere unCritere, Associer uneAssociation, int unIdOffre)
         {
             var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
@@ -32,12 +33,34 @@ namespace AppEval
                 using (var cmd3 = new NpgsqlCommand())
                 {
                     cmd3.Connection = conn;
-                    //Id de l'offre à changer !!!
                     cmd3.CommandText = "INSERT INTO associer (id_critere, id_offre, coefficient) VALUES (" + id + ", "+unIdOffre+"," + uneAssociation.GetCoeff() + ")";
                     cmd3.ExecuteNonQuery();
                 }
                 conn.Close();
             }
+        }
+        public static void SupprimerCritere(Critere unCritere, Associer uneAssociation)
+        {
+            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "DELETE FROM critere WHERE id_critere =" + unCritere.GetId() + ")";
+                    cmd.ExecuteNonQuery();
+                }
+                using (var cmd2 = new NpgsqlCommand())
+                {
+                    cmd2.Connection = conn;
+                    cmd2.CommandText = "DELETE FROM associer WHERE id_critere ="+uneAssociation.GetIdCritere()+"AND id_offre="+uneAssociation.GetIdOffre()+")";
+                    cmd2.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+
         }
 
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)

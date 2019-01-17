@@ -53,6 +53,7 @@
             this.OffreCritere.Name = "OffreCritere";
             this.OffreCritere.Size = new System.Drawing.Size(267, 342);
             this.OffreCritere.TabIndex = 0;
+            this.OffreCritere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OffreCritere_CellContentClick);
             // 
             // Critères
             // 

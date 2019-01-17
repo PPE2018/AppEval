@@ -34,6 +34,9 @@ namespace AppEval
         {
             int index = this.OffreCritere.CurrentRow.Index;
             this.OffreCritere.Rows.RemoveAt(index);
+
+            //DAOCritere.SupprimerCritere;
+            
         }
 
         private void buttonModifier_Click(object sender, EventArgs e)
@@ -48,6 +51,11 @@ namespace AppEval
             {
                 OffreCritere.Rows.Add(c.GetLibelle());
             }
+        }
+
+        private void OffreCritere_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
