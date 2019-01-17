@@ -39,7 +39,7 @@
             this.txtBonusMalus = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.libNote = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -146,14 +146,14 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Note Finale :";
             // 
-            // label3
+            // libNote
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 416);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "note";
+            this.libNote.AutoSize = true;
+            this.libNote.Location = new System.Drawing.Point(88, 416);
+            this.libNote.Name = "libNote";
+            this.libNote.Size = new System.Drawing.Size(28, 13);
+            this.libNote.TabIndex = 6;
+            this.libNote.Text = "note";
             // 
             // button2
             // 
@@ -170,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 483);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.libNote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Evaluation";
@@ -191,7 +191,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label libNote;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtBonusMalus;
         private System.Windows.Forms.Label label4;
