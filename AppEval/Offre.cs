@@ -19,10 +19,15 @@ namespace AppEval
         private bool supprimer;
         private DateTime dateLimiteOffre;
 
-        public Offre(string unLibelle, string unLieu)
+        public Offre(int unIdOffres, string unLibelle, string unLieu)
         {
+            this.IdOffre = unIdOffres;
             this.libelle = unLibelle;
             this.lieu = unLieu;
+        }
+        public int GetIdOffre()
+        {
+            return this.IdOffre;
         }
 
         public string GetLibelle()
@@ -48,10 +53,7 @@ namespace AppEval
             this.supprimer = false;
             this.dateLimiteOffre = uneDateLimiteOffre;
         }
-        public int GetIdOffre()
-        {
-            return this.IdOffre;
-        }
+
 
 
     }

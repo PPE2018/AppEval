@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.OffreCritere = new System.Windows.Forms.DataGridView();
+            this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.bttnSupprimer = new System.Windows.Forms.Button();
             this.listBoxOffre = new System.Windows.Forms.ListBox();
@@ -37,8 +38,6 @@
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
-            this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
@@ -49,18 +48,24 @@
             this.OffreCritere.AllowUserToDeleteRows = false;
             this.OffreCritere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OffreCritere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Critères,
-            this.id});
-            this.OffreCritere.Location = new System.Drawing.Point(6, 73);
+            this.Critères});
+            this.OffreCritere.Location = new System.Drawing.Point(243, 79);
             this.OffreCritere.Name = "OffreCritere";
-            this.OffreCritere.Size = new System.Drawing.Size(249, 345);
+            this.OffreCritere.Size = new System.Drawing.Size(267, 342);
             this.OffreCritere.TabIndex = 0;
+            // 
+            // Critères
+            // 
+            this.Critères.HeaderText = "Critères";
+            this.Critères.Name = "Critères";
+            this.Critères.ReadOnly = true;
+            this.Critères.Width = 200;
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(316, 248);
+            this.buttonAjouter.Location = new System.Drawing.Point(544, 109);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(98, 46);
+            this.buttonAjouter.Size = new System.Drawing.Size(98, 50);
             this.buttonAjouter.TabIndex = 2;
             this.buttonAjouter.Text = "Ajouter un critère";
             this.buttonAjouter.UseVisualStyleBackColor = true;
@@ -68,7 +73,7 @@
             // 
             // bttnSupprimer
             // 
-            this.bttnSupprimer.Location = new System.Drawing.Point(316, 86);
+            this.bttnSupprimer.Location = new System.Drawing.Point(544, 258);
             this.bttnSupprimer.Name = "bttnSupprimer";
             this.bttnSupprimer.Size = new System.Drawing.Size(98, 46);
             this.bttnSupprimer.TabIndex = 3;
@@ -79,9 +84,9 @@
             // listBoxOffre
             // 
             this.listBoxOffre.FormattingEnabled = true;
-            this.listBoxOffre.Location = new System.Drawing.Point(73, 22);
+            this.listBoxOffre.Location = new System.Drawing.Point(9, 79);
             this.listBoxOffre.Name = "listBoxOffre";
-            this.listBoxOffre.Size = new System.Drawing.Size(163, 43);
+            this.listBoxOffre.Size = new System.Drawing.Size(167, 342);
             this.listBoxOffre.TabIndex = 4;
             this.listBoxOffre.SelectedIndexChanged += new System.EventHandler(this.listBoxOffre_SelectedIndexChanged);
             // 
@@ -102,9 +107,9 @@
             this.groupBoxCritere.Controls.Add(this.listBoxOffre);
             this.groupBoxCritere.Controls.Add(this.buttonAjouter);
             this.groupBoxCritere.Controls.Add(this.OffreCritere);
-            this.groupBoxCritere.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxCritere.Location = new System.Drawing.Point(12, 22);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(517, 440);
+            this.groupBoxCritere.Size = new System.Drawing.Size(670, 430);
             this.groupBoxCritere.TabIndex = 6;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
@@ -121,7 +126,7 @@
             // labelOfres
             // 
             this.labelOfres.AutoSize = true;
-            this.labelOfres.Location = new System.Drawing.Point(6, 22);
+            this.labelOfres.Location = new System.Drawing.Point(6, 46);
             this.labelOfres.Name = "labelOfres";
             this.labelOfres.Size = new System.Drawing.Size(41, 13);
             this.labelOfres.TabIndex = 6;
@@ -129,7 +134,7 @@
             // 
             // buttonModifier
             // 
-            this.buttonModifier.Location = new System.Drawing.Point(316, 171);
+            this.buttonModifier.Location = new System.Drawing.Point(544, 187);
             this.buttonModifier.Name = "buttonModifier";
             this.buttonModifier.Size = new System.Drawing.Size(98, 46);
             this.buttonModifier.TabIndex = 4;
@@ -137,24 +142,11 @@
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
-            // Critères
-            // 
-            this.Critères.HeaderText = "Critères";
-            this.Critères.Name = "Critères";
-            this.Critères.ReadOnly = true;
-            this.Critères.Width = 200;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 497);
+            this.ClientSize = new System.Drawing.Size(694, 472);
             this.Controls.Add(this.groupBoxCritere);
             this.Name = "OffreCritereDRH";
             this.Text = "OffreDRH";
@@ -177,6 +169,5 @@
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelDateLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

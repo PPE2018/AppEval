@@ -15,21 +15,19 @@ namespace AppEval
         public OffreCritereDRH()
         {
             InitializeComponent();
-            
-            foreach (Offre o in DAOOffre.GetLesOffres(1))
+
+            foreach (Offre o in DAOOffre.GetLesOffres())
             {
-                listBoxOffre.Items.Add(o.GetLibelle()+ " " + o.GetLieu());
+                listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
             }
-
-
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AjoutCritere c = new AjoutCritere();
+            AjoutCritere c = new AjoutCritere(2);
             c.Show();
-            
+
         }
 
         private void bttnSupprimer_Click(object sender, EventArgs e)
@@ -45,16 +43,12 @@ namespace AppEval
 
         private void listBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             OffreCritere.Rows.Clear();
-
-            foreach (Critere c in Passerelle.GetLesCriteres())
+            foreach (Critere c in DAOCritere.GetLesCriteresByOffre(listBoxOffre.SelectedIndex + 1))
             {
                 OffreCritere.Rows.Add(c.GetLibelle());
-               
             }
-            
-
         }
     }
 }
+

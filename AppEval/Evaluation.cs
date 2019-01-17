@@ -17,7 +17,7 @@ namespace AppEval
         {
             this.id_offre = unId_offre;
             InitializeComponent();
-            foreach(KeyValuePair<string, int> kvp in Passerelle.GetCritereCoeff())
+            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff())
             {
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
