@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Associer.cs" />
     <Compile Include="Critere.cs" />
+    <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOOffre.cs" />
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
