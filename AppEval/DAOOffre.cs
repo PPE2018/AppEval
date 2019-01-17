@@ -13,8 +13,7 @@ namespace AppEval
         {
 
             List<Offre> listOffres = new List<Offre>();
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
                 using (var cmd = new NpgsqlCommand("SELECT id_offre,libelle, lieu FROM offre_emplois", conn))

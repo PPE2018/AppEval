@@ -12,6 +12,7 @@ namespace AppEval
 {
     public partial class OffreCritereDRH : Form
     {
+        int idOffre;
         public OffreCritereDRH()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace AppEval
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AjoutCritere c = new AjoutCritere(2);
+            AjoutCritere c = new AjoutCritere(idOffre);
             c.Show();
 
         }
@@ -47,7 +48,22 @@ namespace AppEval
         private void listBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
         {
             OffreCritere.Rows.Clear();
-            foreach (Critere c in DAOCritere.GetLesCriteresByOffre(listBoxOffre.SelectedIndex + 1))
+            string value = listBoxOffre.SelectedItem.ToString();
+            string id ="";
+            bool stop = false;
+            foreach(Char c in value)
+            {
+                if(c != '-' && !stop) 
+                {
+                    id += c;
+                }
+                else
+                {
+                    stop = true;
+                }
+            }
+            this.idOffre = int.Parse(id);
+            foreach (Critere c in DAOCritere.GetLesCriteresByOffre(idOffre))
             {
                 OffreCritere.Rows.Add(c.GetLibelle());
             }

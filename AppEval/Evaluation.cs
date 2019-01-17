@@ -12,11 +12,12 @@ namespace AppEval
 {
     public partial class Evaluation : Form
     {
-        int id_offre;
-        public Evaluation(int unId_offre)
+        int idOffre;
+        public Evaluation(int unIdOffre)
         {
+            this.idOffre = unIdOffre;
             InitializeComponent();
-            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff())
+            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff(idOffre))
             {
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
@@ -27,7 +28,8 @@ namespace AppEval
             Dictionary<string, int> libelleNote = new Dictionary<string, int>();
             List<string> lesLibelles = new List<string>();
             List<int> lesNotes = new List<int>();
-            for(int i=0; i < tableauEvaluation.RowCount; i++)
+            List<int> lesCoeff = new List<int>();
+            for (int i=0; i < tableauEvaluation.RowCount; i++)
             {
                 for (int n = 0; n < tableauEvaluation.ColumnCount; n++)
                 {
@@ -35,23 +37,48 @@ namespace AppEval
                     {
                         lesLibelles.Add(tableauEvaluation[n, i].Value.ToString());
                     }
+
+                    if(n == 1)
+                    {
+                        string temp = tableauEvaluation[n, i].Value.ToString();
+                        lesCoeff.Add(int.Parse(temp));
+                    }
                      
                     if (n == 2)
                     {
                         string temp = tableauEvaluation[n, i].Value.ToString();
-                        lesNotes.Add(int.Parse(temp));
+                        try
+                        {
+                            int uneNote = int.Parse(temp);
+                            lesNotes.Add(uneNote);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Vous devez mettre des notes pour chaque critère au format numérique !");
+                        }
                     }
                 }
             }
             
-           for (int i = 0; i < lesLibelles.Count; i++)
-           {
+            for (int i = 0; i < lesLibelles.Count; i++)
+            {
                 libelleNote[lesLibelles[i]] = lesNotes[i];
-           }
+            }
             string commentaire = txtCommentaire.Text;
             string temp2 = txtBonusMalus.Text;
             int bonusMalus = int.Parse(temp2);
-            DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
+            double tot = 0;
+            double div = 0;
+            for(int i = 0; i < lesCoeff.Count; i++)
+            {
+                tot += lesNotes[i] * lesCoeff[i];
+                div += lesCoeff[i];
+            }
+            tot += bonusMalus;
+            double note = tot / div;
+            note = Math.Round(note, 2);
+            libNote.Text = note.ToString();
+            //DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
         }
     }
 }
