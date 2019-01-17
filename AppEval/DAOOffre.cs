@@ -11,7 +11,6 @@ namespace AppEval
     {
         public static List<Offre> GetLesOffres()
         {
-
             List<Offre> listOffres = new List<Offre>();
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {

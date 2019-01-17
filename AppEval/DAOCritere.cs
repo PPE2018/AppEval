@@ -38,28 +38,53 @@ namespace AppEval
                 conn.Close();
             }
         }
-        public static void SupprimerCritere(Critere unCritere, Associer uneAssociation)
+        public static void SupprimerCritere(string libelleCrit, int unIdOffre)
         {
             var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-                using (var cmd = new NpgsqlCommand())
+                int idC = 0;
+                int association = 0;
+                using (NpgsqlCommand cmd0 = new NpgsqlCommand("SELECT id_critere FROM critere WHERE libelle_critere = '" + libelleCrit + "';", conn))
+                using (NpgsqlDataReader reader = cmd0.ExecuteReader())
                 {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "DELETE FROM critere WHERE id_critere =" + unCritere.GetId() + ")";
-                    cmd.ExecuteNonQuery();
+                    while (reader.Read())
+                    {
+                        idC = reader.GetInt32(0);
+                    }
                 }
-                using (var cmd2 = new NpgsqlCommand())
+
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT (id_offre) FROM associer WHERE id_critere=" + idC + ";", conn))
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
-                    cmd2.Connection = conn;
-                    cmd2.CommandText = "DELETE FROM associer WHERE id_critere ="+uneAssociation.GetIdCritere()+"AND id_offre="+uneAssociation.GetIdOffre()+")";
+                    while (reader.Read())
+                    {
+                        association = reader.GetInt32(0);
+                    }
+                }
+
+                NpgsqlCommand cmd1 = new NpgsqlCommand("DELETE FROM associer WHERE id_critere = " + idC + " AND id_offre=" + unIdOffre,conn);
+                cmd1.ExecuteNonQuery();
+
+                if (association == 1)
+                {
+                    NpgsqlCommand cmd3 = new NpgsqlCommand("DELETE FROM noter WHERE id_critere=" + idC, conn);
+                    cmd3.ExecuteNonQuery();
+                    NpgsqlCommand cmd2 = new NpgsqlCommand("DELETE FROM critere WHERE id_critere = " + idC, conn);
                     cmd2.ExecuteNonQuery();
-                }
-                conn.Close();
-            }
 
+                }
+                else
+                {
+                    NpgsqlCommand cmd4 = new NpgsqlCommand("DELETE FROM note N INNER JOIN evaluation E ON N.id_evaluation = E.id_evaluation INNER JOIN candidature C ON E.id_candidature= C.id_candidature WHERE id_critere=" + idC+"AND id_offre="+unIdOffre, conn);
+                    cmd4.ExecuteNonQuery();
+                }
+                
+                conn.Close();
+            }             
         }
 
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)

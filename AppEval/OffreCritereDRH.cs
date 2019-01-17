@@ -34,9 +34,8 @@ namespace AppEval
         private void bttnSupprimer_Click(object sender, EventArgs e)
         {
             int index = this.OffreCritere.CurrentRow.Index;
-            this.OffreCritere.Rows.RemoveAt(index);
 
-            //DAOCritere.SupprimerCritere;
+            DAOCritere.SupprimerCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(),listBoxOffre.SelectedIndex+1);
             
         }
 
