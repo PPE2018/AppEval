@@ -11,8 +11,7 @@ namespace AppEval
     {
         public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus)
         {
-            var connString = "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
 

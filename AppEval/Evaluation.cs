@@ -12,12 +12,12 @@ namespace AppEval
 {
     public partial class Evaluation : Form
     {
-        int id_offre;
-        public Evaluation(int unId_offre)
+        int idOffre;
+        public Evaluation(int unIdOffre)
         {
-            this.id_offre = unId_offre;
+            this.idOffre = unIdOffre;
             InitializeComponent();
-            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff())
+            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff(idOffre))
             {
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
@@ -47,7 +47,15 @@ namespace AppEval
                     if (n == 2)
                     {
                         string temp = tableauEvaluation[n, i].Value.ToString();
-                        lesNotes.Add(int.Parse(temp));
+                        try
+                        {
+                            int uneNote = int.Parse(temp);
+                            lesNotes.Add(uneNote);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Vous devez mettre des notes pour chaque critère au format numérique !");
+                        }
                     }
                 }
             }

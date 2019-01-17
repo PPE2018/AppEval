@@ -10,8 +10,7 @@ namespace AppEval
     {
         public static void AjoutCritere(Critere unCritere, Associer uneAssociation, int unIdOffre)
         {
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
                 // Insert some data
@@ -43,8 +42,7 @@ namespace AppEval
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)
         {
             List<Critere> listCritere = new List<Critere>();
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
 
@@ -60,15 +58,14 @@ namespace AppEval
             return listCritere;
         }
 
-        public static Dictionary<string, int> GetCritereCoeff()
+        public static Dictionary<string, int> GetCritereCoeff(int idOffre)
         {
             Dictionary<string, int> critereCoeff = new Dictionary<string, int>();
-            var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
 
-                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM associer INNER JOIN critere ON associer.id_critere = critere.id_critere", conn))
+                using (var cmd = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM associer INNER JOIN critere ON associer.id_critere = critere.id_critere WHERE id_offre = "+idOffre, conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
