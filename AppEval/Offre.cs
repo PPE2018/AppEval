@@ -8,6 +8,7 @@ namespace AppEval
 {
     public class Offre
     {
+        private int IdOffre;
         private string libelle;
         private string description;
         private string lieu;
@@ -33,9 +34,10 @@ namespace AppEval
         {
             return this.lieu;
         }
-        public Offre(string unLibelle, string uneDescription, string unLieu, string unTypeContrat, double unSalaire, 
+        public Offre(int unIdOffre, string unLibelle, string uneDescription, string unLieu, string unTypeContrat, double unSalaire, 
             DateTime uneDateLimite, string uneVideo,DateTime uneDateLimiteOffre)
         {
+            this.IdOffre = unIdOffre;
             this.libelle = unLibelle;
             this.description = uneDescription;
             this.lieu = unLieu;
@@ -45,6 +47,10 @@ namespace AppEval
             this.video = uneVideo;
             this.supprimer = false;
             this.dateLimiteOffre = uneDateLimiteOffre;
+        }
+        public int GetIdOffre()
+        {
+            return this.IdOffre;
         }
 
 

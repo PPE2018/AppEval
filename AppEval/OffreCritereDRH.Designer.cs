@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.OffreCritere = new System.Windows.Forms.DataGridView();
-            this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.bttnSupprimer = new System.Windows.Forms.Button();
             this.listBoxOffre = new System.Windows.Forms.ListBox();
@@ -38,26 +37,24 @@
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
+            this.Critères = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
             // 
             // OffreCritere
             // 
+            this.OffreCritere.AllowUserToAddRows = false;
+            this.OffreCritere.AllowUserToDeleteRows = false;
             this.OffreCritere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OffreCritere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Critères});
+            this.Critères,
+            this.id});
             this.OffreCritere.Location = new System.Drawing.Point(6, 73);
             this.OffreCritere.Name = "OffreCritere";
             this.OffreCritere.Size = new System.Drawing.Size(249, 345);
             this.OffreCritere.TabIndex = 0;
-            // 
-            // Critères
-            // 
-            this.Critères.HeaderText = "Critères";
-            this.Critères.Name = "Critères";
-            this.Critères.ReadOnly = true;
-            this.Critères.Width = 200;
             // 
             // buttonAjouter
             // 
@@ -140,6 +137,19 @@
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
+            // Critères
+            // 
+            this.Critères.HeaderText = "Critères";
+            this.Critères.Name = "Critères";
+            this.Critères.ReadOnly = true;
+            this.Critères.Width = 200;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,10 +172,11 @@
         private System.Windows.Forms.Button bttnSupprimer;
         private System.Windows.Forms.ListBox listBoxOffre;
         private System.Windows.Forms.DateTimePicker dateTimePickerDateLimite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
         private System.Windows.Forms.GroupBox groupBoxCritere;
         private System.Windows.Forms.Label labelOfres;
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelDateLimite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
