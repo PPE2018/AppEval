@@ -93,7 +93,7 @@
             // 
             // dateTimePickerDateLimite
             // 
-            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(349, 22);
+            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(388, 22);
             this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
             this.dateTimePickerDateLimite.Size = new System.Drawing.Size(134, 20);
             this.dateTimePickerDateLimite.TabIndex = 5;
@@ -118,7 +118,7 @@
             // labelDateLimite
             // 
             this.labelDateLimite.AutoSize = true;
-            this.labelDateLimite.Location = new System.Drawing.Point(277, 22);
+            this.labelDateLimite.Location = new System.Drawing.Point(275, 22);
             this.labelDateLimite.Name = "labelDateLimite";
             this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
             this.labelDateLimite.TabIndex = 7;
