@@ -1,4 +1,4 @@
-﻿²using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,7 +79,7 @@ namespace AppEval
                 }
                 else
                 {
-                    NpgsqlCommand cmd4 = new NpgsqlCommand("DELETE FROM note N INNER JOIN evaluation E ON N.id_evaluation = E.id_evaluation INNER JOIN candidature C ON E.id_candidature= C.id_candidature WHERE id_critere=" + idC+"AND id_offre="+unIdOffre, conn);
+                    NpgsqlCommand cmd4 = new NpgsqlCommand("DELETE FROM noter WHERE id_critere =(SELECT id_critere FROM evaluation E INNER JOIN candidature C ON E.id_cand = C.id_cand WHERE id_critere ="+ idC +" AND id_offre ="+ unIdOffre, conn);
                     cmd4.ExecuteNonQuery();
                 }
                 
