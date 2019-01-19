@@ -72,6 +72,17 @@ namespace AppEval
         {
 
         }
+
+        private void buttonAjouterDate_Click(object sender, EventArgs e)
+        {
+            
+            groupBoxDate.Visible= true;
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            groupBoxDate.Visible = false;
+        }
     }
 }
 

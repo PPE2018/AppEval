@@ -25,6 +25,11 @@ namespace AppEval
             this.libelle = unLibelle;
             this.lieu = unLieu;
         }
+        public Offre( DateTime uneDateLimite)
+        {
+            
+            this.dateLimiteOffre = uneDateLimite;
+        }
         public int GetIdOffre()
         {
             return this.IdOffre;

@@ -33,13 +33,17 @@
             this.buttonAjouter = new System.Windows.Forms.Button();
             this.bttnSupprimer = new System.Windows.Forms.Button();
             this.listBoxOffre = new System.Windows.Forms.ListBox();
-            this.dateTimePickerDateLimite = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickeDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
+            this.groupBoxDate = new System.Windows.Forms.GroupBox();
+            this.buttonValider = new System.Windows.Forms.Button();
+            this.buttonAjouterDate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
+            this.groupBoxDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // OffreCritere
@@ -91,18 +95,17 @@
             this.listBoxOffre.TabIndex = 4;
             this.listBoxOffre.SelectedIndexChanged += new System.EventHandler(this.listBoxOffre_SelectedIndexChanged);
             // 
-            // dateTimePickerDateLimite
+            // dateTimePickeDateLimite
             // 
-            this.dateTimePickerDateLimite.Location = new System.Drawing.Point(388, 22);
-            this.dateTimePickerDateLimite.Name = "dateTimePickerDateLimite";
-            this.dateTimePickerDateLimite.Size = new System.Drawing.Size(134, 20);
-            this.dateTimePickerDateLimite.TabIndex = 5;
+            this.dateTimePickeDateLimite.Location = new System.Drawing.Point(34, 70);
+            this.dateTimePickeDateLimite.Name = "dateTimePickeDateLimite";
+            this.dateTimePickeDateLimite.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePickeDateLimite.TabIndex = 5;
             // 
             // groupBoxCritere
             // 
-            this.groupBoxCritere.Controls.Add(this.labelDateLimite);
+            this.groupBoxCritere.Controls.Add(this.buttonAjouterDate);
             this.groupBoxCritere.Controls.Add(this.labelOfres);
-            this.groupBoxCritere.Controls.Add(this.dateTimePickerDateLimite);
             this.groupBoxCritere.Controls.Add(this.buttonModifier);
             this.groupBoxCritere.Controls.Add(this.bttnSupprimer);
             this.groupBoxCritere.Controls.Add(this.listBoxOffre);
@@ -110,7 +113,7 @@
             this.groupBoxCritere.Controls.Add(this.OffreCritere);
             this.groupBoxCritere.Location = new System.Drawing.Point(12, 22);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(670, 430);
+            this.groupBoxCritere.Size = new System.Drawing.Size(662, 441);
             this.groupBoxCritere.TabIndex = 6;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
@@ -118,7 +121,7 @@
             // labelDateLimite
             // 
             this.labelDateLimite.AutoSize = true;
-            this.labelDateLimite.Location = new System.Drawing.Point(275, 22);
+            this.labelDateLimite.Location = new System.Drawing.Point(68, 36);
             this.labelDateLimite.Name = "labelDateLimite";
             this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
             this.labelDateLimite.TabIndex = 7;
@@ -143,17 +146,53 @@
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
             // 
+            // groupBoxDate
+            // 
+            this.groupBoxDate.Controls.Add(this.buttonValider);
+            this.groupBoxDate.Controls.Add(this.labelDateLimite);
+            this.groupBoxDate.Controls.Add(this.dateTimePickeDateLimite);
+            this.groupBoxDate.Location = new System.Drawing.Point(680, 22);
+            this.groupBoxDate.Name = "groupBoxDate";
+            this.groupBoxDate.Size = new System.Drawing.Size(208, 159);
+            this.groupBoxDate.TabIndex = 8;
+            this.groupBoxDate.TabStop = false;
+            this.groupBoxDate.Text = "Date :";
+            this.groupBoxDate.Visible = false;
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Location = new System.Drawing.Point(60, 110);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(94, 27);
+            this.buttonValider.TabIndex = 8;
+            this.buttonValider.Text = "Valider";
+            this.buttonValider.UseVisualStyleBackColor = true;
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
+            // 
+            // buttonAjouterDate
+            // 
+            this.buttonAjouterDate.Location = new System.Drawing.Point(544, 326);
+            this.buttonAjouterDate.Name = "buttonAjouterDate";
+            this.buttonAjouterDate.Size = new System.Drawing.Size(98, 46);
+            this.buttonAjouterDate.TabIndex = 7;
+            this.buttonAjouterDate.Text = "Ajouter une date ";
+            this.buttonAjouterDate.UseVisualStyleBackColor = true;
+            this.buttonAjouterDate.Click += new System.EventHandler(this.buttonAjouterDate_Click);
+            // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 472);
+            this.ClientSize = new System.Drawing.Size(900, 503);
+            this.Controls.Add(this.groupBoxDate);
             this.Controls.Add(this.groupBoxCritere);
             this.Name = "OffreCritereDRH";
             this.Text = "OffreDRH";
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).EndInit();
             this.groupBoxCritere.ResumeLayout(false);
             this.groupBoxCritere.PerformLayout();
+            this.groupBoxDate.ResumeLayout(false);
+            this.groupBoxDate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -164,11 +203,14 @@
         private System.Windows.Forms.Button buttonAjouter;
         private System.Windows.Forms.Button bttnSupprimer;
         private System.Windows.Forms.ListBox listBoxOffre;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDateLimite;
+        private System.Windows.Forms.DateTimePicker dateTimePickeDateLimite;
         private System.Windows.Forms.GroupBox groupBoxCritere;
         private System.Windows.Forms.Label labelOfres;
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelDateLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
+        private System.Windows.Forms.Button buttonAjouterDate;
+        private System.Windows.Forms.GroupBox groupBoxDate;
+        private System.Windows.Forms.Button buttonValider;
     }
 }

@@ -26,5 +26,24 @@ namespace AppEval
             }
             return listOffres;
         }
+        public static DateTime GetDateLimite()
+        {
+            DateTime uneDate= new DateTime();
+            using(var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT id_offre,date_limite FROM offre_emplois", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Offre uneOffre = new Offre(reader.GetDateTime(1));
+                        uneDate.Add(uneOffre);
+                    }
+                conn.Close();
+
+            }
+
+            return uneDate;
+        }
     }
 }
