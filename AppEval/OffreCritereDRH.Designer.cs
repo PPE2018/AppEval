@@ -35,12 +35,12 @@
             this.listBoxOffre = new System.Windows.Forms.ListBox();
             this.dateTimePickeDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
-            this.labelDateLimite = new System.Windows.Forms.Label();
+            this.buttonAjouterDate = new System.Windows.Forms.Button();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
+            this.labelDateLimite = new System.Windows.Forms.Label();
             this.groupBoxDate = new System.Windows.Forms.GroupBox();
             this.buttonValider = new System.Windows.Forms.Button();
-            this.buttonAjouterDate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.groupBoxDate.SuspendLayout();
@@ -101,6 +101,7 @@
             this.dateTimePickeDateLimite.Name = "dateTimePickeDateLimite";
             this.dateTimePickeDateLimite.Size = new System.Drawing.Size(134, 20);
             this.dateTimePickeDateLimite.TabIndex = 5;
+            this.dateTimePickeDateLimite.ValueChanged += new System.EventHandler(this.dateTimePickeDateLimite_ValueChanged);
             // 
             // groupBoxCritere
             // 
@@ -118,14 +119,15 @@
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
             // 
-            // labelDateLimite
+            // buttonAjouterDate
             // 
-            this.labelDateLimite.AutoSize = true;
-            this.labelDateLimite.Location = new System.Drawing.Point(68, 36);
-            this.labelDateLimite.Name = "labelDateLimite";
-            this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
-            this.labelDateLimite.TabIndex = 7;
-            this.labelDateLimite.Text = "Date Limite :";
+            this.buttonAjouterDate.Location = new System.Drawing.Point(544, 326);
+            this.buttonAjouterDate.Name = "buttonAjouterDate";
+            this.buttonAjouterDate.Size = new System.Drawing.Size(98, 46);
+            this.buttonAjouterDate.TabIndex = 7;
+            this.buttonAjouterDate.Text = "Ajouter une date ";
+            this.buttonAjouterDate.UseVisualStyleBackColor = true;
+            this.buttonAjouterDate.Click += new System.EventHandler(this.buttonAjouterDate_Click);
             // 
             // labelOfres
             // 
@@ -145,6 +147,15 @@
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
+            // 
+            // labelDateLimite
+            // 
+            this.labelDateLimite.AutoSize = true;
+            this.labelDateLimite.Location = new System.Drawing.Point(68, 36);
+            this.labelDateLimite.Name = "labelDateLimite";
+            this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
+            this.labelDateLimite.TabIndex = 7;
+            this.labelDateLimite.Text = "Date Limite :";
             // 
             // groupBoxDate
             // 
@@ -168,16 +179,6 @@
             this.buttonValider.Text = "Valider";
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
-            // 
-            // buttonAjouterDate
-            // 
-            this.buttonAjouterDate.Location = new System.Drawing.Point(544, 326);
-            this.buttonAjouterDate.Name = "buttonAjouterDate";
-            this.buttonAjouterDate.Size = new System.Drawing.Size(98, 46);
-            this.buttonAjouterDate.TabIndex = 7;
-            this.buttonAjouterDate.Text = "Ajouter une date ";
-            this.buttonAjouterDate.UseVisualStyleBackColor = true;
-            this.buttonAjouterDate.Click += new System.EventHandler(this.buttonAjouterDate_Click);
             // 
             // OffreCritereDRH
             // 

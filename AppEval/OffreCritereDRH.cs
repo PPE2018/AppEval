@@ -83,6 +83,12 @@ namespace AppEval
         {
             groupBoxDate.Visible = false;
         }
+
+        private void dateTimePickeDateLimite_ValueChanged(object sender, EventArgs e)
+        {
+
+            dateTimePickeDateLimite.Value = DAOOffre.GetDateLimiteByOffre(idOffre);      
+        }
     }
 }
 
