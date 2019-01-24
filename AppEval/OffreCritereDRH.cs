@@ -77,12 +77,16 @@ namespace AppEval
         {
             
             groupBoxDate.Visible= true;
+            dateTimePickeDateLimite.Value= DAOOffre.GetDateLimite(idOffre);
         }
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
             groupBoxDate.Visible = false;
+            DAOOffre.ModifierDateLimite(idOffre, dateTimePickeDateLimite.Value);
+
         }
+
     }
 }
 
