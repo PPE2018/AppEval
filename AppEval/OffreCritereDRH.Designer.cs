@@ -101,6 +101,7 @@
             this.dateTimePickeDateLimite.Name = "dateTimePickeDateLimite";
             this.dateTimePickeDateLimite.Size = new System.Drawing.Size(134, 20);
             this.dateTimePickeDateLimite.TabIndex = 5;
+            this.dateTimePickeDateLimite.ValueChanged += new System.EventHandler(this.dateTimePickeDateLimite_ValueChanged);
             // 
             // groupBoxCritere
             // 
