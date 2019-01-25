@@ -17,6 +17,8 @@ namespace AppEval
         {
             InitializeComponent();
 
+            //Pour afficher les offres au commencement de l'appli
+
             foreach (Offre o in DAOOffre.GetLesOffres())
             {
                 listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
@@ -41,7 +43,11 @@ namespace AppEval
 
         private void buttonModifier_Click(object sender, EventArgs e)
         {
-            //this.OffreCritere.Rows.("Critères").Value;
+            groupBoxModifierCritere.Visible = true;
+            int index = this.OffreCritere.CurrentRow.Index;
+            DAOCritere.ModifierCritère(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), idOffre, );
+
+
         }
 
         private void listBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,7 +88,10 @@ namespace AppEval
 
         private void buttonValider_Click(object sender, EventArgs e)
         {
+            //Dès que le bouton est cliqué la groupe box ne s'affiche pas 
             groupBoxDate.Visible = false;
+
+            //permet de modifier la date limite de l'offre
             DAOOffre.ModifierDateLimite(idOffre, dateTimePickeDateLimite.Value);
 
         }
