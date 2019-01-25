@@ -13,14 +13,15 @@ namespace AppEval
     public partial class Evaluation : Form
     {
         int idOffre;
-        public Evaluation(int unIdOffre)
+        public Evaluation()
         {
-            this.idOffre = unIdOffre;
             InitializeComponent();
-            foreach(KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff(idOffre))
+            
+            foreach (Offre o in DAOOffre.GetLesOffres())
             {
-                tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
+                listeOffres.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle());
             }
+            listeOffres.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +85,30 @@ namespace AppEval
         private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void listeOffres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string value = listeOffres.SelectedItem.ToString();
+            string id = "";
+            bool stop = false;
+            foreach (Char c in value)
+            {
+                if (c != '-' && !stop)
+                {
+                    id += c;
+                }
+                else
+                {
+                    stop = true;
+                }
+            }
+            this.idOffre = int.Parse(id);
+            tableauEvaluation.Rows.Clear();
+            foreach (KeyValuePair<string, int> kvp in DAOCritere.GetCritereCoeff(idOffre))
+            {
+                tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
+            }
         }
     }
 }
