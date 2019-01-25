@@ -41,9 +41,26 @@
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.groupBoxDate = new System.Windows.Forms.GroupBox();
             this.buttonValider = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Valider = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCoeff = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.groupBoxModifierCritere = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCoeff = new System.Windows.Forms.TextBox();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
+            this.buttonModifierCritere = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.groupBoxDate.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBoxModifierCritere.SuspendLayout();
             this.SuspendLayout();
             // 
             // OffreCritere
@@ -101,7 +118,6 @@
             this.dateTimePickeDateLimite.Name = "dateTimePickeDateLimite";
             this.dateTimePickeDateLimite.Size = new System.Drawing.Size(134, 20);
             this.dateTimePickeDateLimite.TabIndex = 5;
-            this.dateTimePickeDateLimite.ValueChanged += new System.EventHandler(this.dateTimePickeDateLimite_ValueChanged);
             // 
             // groupBoxCritere
             // 
@@ -159,6 +175,7 @@
             // 
             // groupBoxDate
             // 
+            this.groupBoxDate.Controls.Add(this.groupBox1);
             this.groupBoxDate.Controls.Add(this.buttonValider);
             this.groupBoxDate.Controls.Add(this.labelDateLimite);
             this.groupBoxDate.Controls.Add(this.dateTimePickeDateLimite);
@@ -180,11 +197,145 @@
             this.buttonValider.UseVisualStyleBackColor = true;
             this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Valider);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtCoeff);
+            this.groupBox1.Controls.Add(this.txtNom);
+            this.groupBox1.Location = new System.Drawing.Point(0, 217);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(208, 143);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ajouter un Critère";
+            // 
+            // Valider
+            // 
+            this.Valider.AutoSize = true;
+            this.Valider.Location = new System.Drawing.Point(60, 116);
+            this.Valider.Name = "Valider";
+            this.Valider.Size = new System.Drawing.Size(50, 13);
+            this.Valider.TabIndex = 7;
+            this.Valider.Text = "Message";
+            this.Valider.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom :";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(116, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Ajouter";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Coefficient :";
+            // 
+            // txtCoeff
+            // 
+            this.txtCoeff.Location = new System.Drawing.Point(91, 76);
+            this.txtCoeff.Name = "txtCoeff";
+            this.txtCoeff.Size = new System.Drawing.Size(100, 20);
+            this.txtCoeff.TabIndex = 4;
+            // 
+            // txtNom
+            // 
+            this.txtNom.Location = new System.Drawing.Point(91, 39);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(100, 20);
+            this.txtNom.TabIndex = 3;
+            // 
+            // groupBoxModifierCritere
+            // 
+            this.groupBoxModifierCritere.Controls.Add(this.buttonModifierCritere);
+            this.groupBoxModifierCritere.Controls.Add(this.label3);
+            this.groupBoxModifierCritere.Controls.Add(this.label4);
+            this.groupBoxModifierCritere.Controls.Add(this.label5);
+            this.groupBoxModifierCritere.Controls.Add(this.textBoxCoeff);
+            this.groupBoxModifierCritere.Controls.Add(this.textBoxNom);
+            this.groupBoxModifierCritere.Location = new System.Drawing.Point(680, 258);
+            this.groupBoxModifierCritere.Name = "groupBoxModifierCritere";
+            this.groupBoxModifierCritere.Size = new System.Drawing.Size(208, 143);
+            this.groupBoxModifierCritere.TabIndex = 9;
+            this.groupBoxModifierCritere.TabStop = false;
+            this.groupBoxModifierCritere.Text = "Modifier Critère";
+            this.groupBoxModifierCritere.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Message";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Nom :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Coefficient :";
+            // 
+            // textBoxCoeff
+            // 
+            this.textBoxCoeff.Location = new System.Drawing.Point(91, 76);
+            this.textBoxCoeff.Name = "textBoxCoeff";
+            this.textBoxCoeff.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCoeff.TabIndex = 4;
+            // 
+            // textBoxNom
+            // 
+            this.textBoxNom.Location = new System.Drawing.Point(91, 39);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNom.TabIndex = 3;
+            // 
+            // buttonModifierCritere
+            // 
+            this.buttonModifierCritere.Location = new System.Drawing.Point(116, 111);
+            this.buttonModifierCritere.Name = "buttonModifierCritere";
+            this.buttonModifierCritere.Size = new System.Drawing.Size(75, 23);
+            this.buttonModifierCritere.TabIndex = 8;
+            this.buttonModifierCritere.Text = "Modifier";
+            this.buttonModifierCritere.UseVisualStyleBackColor = true;
+            // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 503);
+            this.Controls.Add(this.groupBoxModifierCritere);
             this.Controls.Add(this.groupBoxDate);
             this.Controls.Add(this.groupBoxCritere);
             this.Name = "OffreCritereDRH";
@@ -194,6 +345,10 @@
             this.groupBoxCritere.PerformLayout();
             this.groupBoxDate.ResumeLayout(false);
             this.groupBoxDate.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBoxModifierCritere.ResumeLayout(false);
+            this.groupBoxModifierCritere.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -213,5 +368,20 @@
         private System.Windows.Forms.Button buttonAjouterDate;
         private System.Windows.Forms.GroupBox groupBoxDate;
         private System.Windows.Forms.Button buttonValider;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label Valider;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCoeff;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.GroupBox groupBoxModifierCritere;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxCoeff;
+        private System.Windows.Forms.TextBox textBoxNom;
+        private System.Windows.Forms.Button buttonModifierCritere;
     }
 }

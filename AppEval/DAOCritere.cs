@@ -87,6 +87,32 @@ namespace AppEval
             }             
         }
 
+        public static void ModifierCritère(int idCritere, int unIdOffre, int unCoeff)
+        {
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                // connect à la bdd
+                conn.Open();
+
+                int id = -1;
+                using (var cmd2 = new NpgsqlCommand("SELECT id_critere libelle_critere FROM critere WHERE id_critere="+idCritere, conn))
+                using (var reader = cmd2.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        id = reader.GetInt32(0);
+                    }
+                
+                using (var cmd3 = new NpgsqlCommand())
+                {
+                    cmd3.Connection = conn;
+                    cmd3.CommandText = "UPDATE associer SET coefficient =" + unCoeff+"WHERE id_critere="+idCritere+"AND id_offre="+unIdOffre;
+                    cmd3.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+
+        }
+
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)
         {
             List<Critere> listCritere = new List<Critere>();

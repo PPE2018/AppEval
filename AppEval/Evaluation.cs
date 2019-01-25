@@ -85,5 +85,10 @@ namespace AppEval
             libNote.Text = note.ToString();
             //DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
         }
+
+        private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
