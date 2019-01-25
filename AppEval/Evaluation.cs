@@ -21,6 +21,11 @@ namespace AppEval
             {
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
+            foreach(Offre o in DAOOffre.GetLesOffres())
+            {
+                listeOffres.Items.Add(o);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
