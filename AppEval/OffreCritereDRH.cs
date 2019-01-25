@@ -44,10 +44,11 @@ namespace AppEval
         private void buttonModifier_Click(object sender, EventArgs e)
         {
             groupBoxModifierCritere.Visible = true;
-            int index = this.OffreCritere.CurrentRow.Index;
-            DAOCritere.ModifierCritère(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), idOffre, );
-
-
+            foreach(KeyValuePair<string,int> c in DAOCritere.ModifierCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), idOffre))
+            {
+                textBoxNom.Text = c.Key;
+                textBoxCoeff.Text = c.Value.ToString();
+            }
         }
 
         private void listBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,6 +97,31 @@ namespace AppEval
 
         }
 
+        private void buttonModifierCritere_Click(object sender, EventArgs e)
+        {
+            string coeffText = textBoxCoeff.Text;
+            int coeff;
+            if (coeffText != "")
+            {
+                try
+                {
+                    coeff = int.Parse(coeffText);
+                    DAOCritere.ModifCoeff(textBoxNom.Text, int.Parse(textBoxCoeff.Text));
+                    groupBoxModifierCritere.Visible = false;
+
+
+                }
+                catch
+                {
+                    MessageBox.Show("Le coefficient doit être un numérique !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez completer tout les champs !");
+            }
+            
+        }
     }
 }
 

@@ -87,28 +87,38 @@ namespace AppEval
             }             
         }
 
-        public static void ModifierCritère(int idCritere, int unIdOffre, int unCoeff)
+        public static Dictionary<string,int>ModifierCritere(string libelle,int idOffre)
         {
+            Dictionary<string, int> critereCoeff = new Dictionary<string, int>();
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 // connect à la bdd
                 conn.Open();
-
-                int id = -1;
-                using (var cmd2 = new NpgsqlCommand("SELECT id_critere libelle_critere FROM critere WHERE id_critere="+idCritere, conn))
+                using (var cmd2 = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM critere C INNER JOIN associer A ON A.id_critere= C.id_critere WHERE C.id_critere= (SELECT id_critere FROM CRITERE WHERE libelle_critere = '"+libelle+"') AND id_offre="+idOffre, conn))
                 using (var reader = cmd2.ExecuteReader())
                     while (reader.Read())
                     {
-                        id = reader.GetInt32(0);
+                        critereCoeff.Add(reader.GetString(0), reader.GetInt32(1));
                     }
-                
-                using (var cmd3 = new NpgsqlCommand())
+                conn.Close();
+            }
+            return critereCoeff;
+        }
+
+        public static void ModifCoeff(string libelle, int coeff)
+        {
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                // modifier le coeff
+                using (var cmd = new NpgsqlCommand())
                 {
-                    cmd3.Connection = conn;
-                    cmd3.CommandText = "UPDATE associer SET coefficient =" + unCoeff+"WHERE id_critere="+idCritere+"AND id_offre="+unIdOffre;
-                    cmd3.ExecuteNonQuery();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "UPDATE associer SET coefficient='" + coeff + "' WHERE id_critere=(SELECT id_critere FROM CRITERE WHERE libelle_critere = '" + libelle + "')";
+                    cmd.ExecuteNonQuery();
                 }
                 conn.Close();
+
             }
 
         }

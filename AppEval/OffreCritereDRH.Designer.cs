@@ -50,7 +50,6 @@
             this.txtCoeff = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
             this.groupBoxModifierCritere = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxCoeff = new System.Windows.Forms.TextBox();
@@ -266,7 +265,6 @@
             // groupBoxModifierCritere
             // 
             this.groupBoxModifierCritere.Controls.Add(this.buttonModifierCritere);
-            this.groupBoxModifierCritere.Controls.Add(this.label3);
             this.groupBoxModifierCritere.Controls.Add(this.label4);
             this.groupBoxModifierCritere.Controls.Add(this.label5);
             this.groupBoxModifierCritere.Controls.Add(this.textBoxCoeff);
@@ -278,16 +276,6 @@
             this.groupBoxModifierCritere.TabStop = false;
             this.groupBoxModifierCritere.Text = "Modifier Critère";
             this.groupBoxModifierCritere.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Message";
-            this.label3.Visible = false;
             // 
             // label4
             // 
@@ -318,6 +306,7 @@
             // 
             this.textBoxNom.Location = new System.Drawing.Point(91, 39);
             this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.ReadOnly = true;
             this.textBoxNom.Size = new System.Drawing.Size(100, 20);
             this.textBoxNom.TabIndex = 3;
             // 
@@ -329,6 +318,7 @@
             this.buttonModifierCritere.TabIndex = 8;
             this.buttonModifierCritere.Text = "Modifier";
             this.buttonModifierCritere.UseVisualStyleBackColor = true;
+            this.buttonModifierCritere.Click += new System.EventHandler(this.buttonModifierCritere_Click);
             // 
             // OffreCritereDRH
             // 
@@ -377,7 +367,6 @@
         private System.Windows.Forms.TextBox txtCoeff;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.GroupBox groupBoxModifierCritere;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxCoeff;
