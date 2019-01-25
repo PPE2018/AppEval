@@ -45,7 +45,6 @@ namespace AppEval
         {
             groupBoxModifierCritere.Visible = true;
             int index = this.OffreCritere.CurrentRow.Index;
-            DAOCritere.ModifierCritère(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), idOffre, );
 
 
         }

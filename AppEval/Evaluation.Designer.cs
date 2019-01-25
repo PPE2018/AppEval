@@ -61,7 +61,7 @@
             this.Coefficient,
             this.Note});
             this.tableauEvaluation.Location = new System.Drawing.Point(8, 23);
-            this.tableauEvaluation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableauEvaluation.Margin = new System.Windows.Forms.Padding(4);
             this.tableauEvaluation.Name = "tableauEvaluation";
             this.tableauEvaluation.Size = new System.Drawing.Size(883, 228);
             this.tableauEvaluation.TabIndex = 0;
@@ -90,7 +90,7 @@
             // txtCommentaire
             // 
             this.txtCommentaire.Location = new System.Drawing.Point(8, 288);
-            this.txtCommentaire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCommentaire.Margin = new System.Windows.Forms.Padding(4);
             this.txtCommentaire.Multiline = true;
             this.txtCommentaire.Name = "txtCommentaire";
             this.txtCommentaire.Size = new System.Drawing.Size(868, 83);
@@ -109,7 +109,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(7, 437);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -126,9 +126,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCommentaire);
             this.groupBox1.Location = new System.Drawing.Point(561, 26);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(904, 473);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -137,7 +137,7 @@
             // txtBonusMalus
             // 
             this.txtBonusMalus.Location = new System.Drawing.Point(172, 396);
-            this.txtBonusMalus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBonusMalus.Margin = new System.Windows.Forms.Padding(4);
             this.txtBonusMalus.Name = "txtBonusMalus";
             this.txtBonusMalus.Size = new System.Drawing.Size(132, 22);
             this.txtBonusMalus.TabIndex = 5;
@@ -175,7 +175,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(569, 553);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 28);
             this.button2.TabIndex = 7;
@@ -200,6 +200,7 @@
             this.listeOffres.Name = "listeOffres";
             this.listeOffres.Size = new System.Drawing.Size(178, 420);
             this.listeOffres.TabIndex = 8;
+            this.listeOffres.SelectedIndexChanged += new System.EventHandler(this.listeOffres_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -231,7 +232,7 @@
             this.Controls.Add(this.libNote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Evaluation";
             this.Text = "Evaluation";
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).EndInit();
