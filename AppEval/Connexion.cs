@@ -10,7 +10,7 @@ namespace AppEval
     {
         public static string Connecter()
         {
-            return "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
+            return "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
         }
     }
 }

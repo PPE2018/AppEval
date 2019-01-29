@@ -21,11 +21,11 @@ namespace AppEval
             {
                 listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
             }
+            listBoxOffre.SetSelected(0, true);
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AjoutCritere c = new AjoutCritere(idOffre);
             c.Show();
 
@@ -71,6 +71,12 @@ namespace AppEval
         private void OffreCritere_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Evaluation evaluation = new Evaluation(idOffre);
+            evaluation.Show();
         }
     }
 }

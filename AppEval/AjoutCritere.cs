@@ -35,24 +35,18 @@ namespace AppEval
                     DAOCritere.AjoutCritere(unCritere, uneAssociation, idOffre);
                     Valider.Visible = true;
                     Valider.Text = "Envoyé !";
-
                 }
                 catch
                 {
                     MessageBox.Show("Le coefficient doit être un numérique !");
                 }
-               
-                
             }
             else
             {
                 MessageBox.Show("Vous devez completer tout les champs !");
             }
             this.Close();
-            OffreCritereDRH ofd = new OffreCritereDRH();
-            ofd.Show();
 
-            
         }
 
         private void AjoutCritere_Load(object sender, EventArgs e)

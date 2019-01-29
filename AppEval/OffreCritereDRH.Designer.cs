@@ -38,6 +38,7 @@
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,7 @@
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(544, 109);
+            this.buttonAjouter.Location = new System.Drawing.Point(534, 135);
             this.buttonAjouter.Name = "buttonAjouter";
             this.buttonAjouter.Size = new System.Drawing.Size(98, 50);
             this.buttonAjouter.TabIndex = 2;
@@ -74,9 +75,9 @@
             // 
             // bttnSupprimer
             // 
-            this.bttnSupprimer.Location = new System.Drawing.Point(544, 258);
+            this.bttnSupprimer.Location = new System.Drawing.Point(534, 247);
             this.bttnSupprimer.Name = "bttnSupprimer";
-            this.bttnSupprimer.Size = new System.Drawing.Size(98, 46);
+            this.bttnSupprimer.Size = new System.Drawing.Size(98, 50);
             this.bttnSupprimer.TabIndex = 3;
             this.bttnSupprimer.Text = "Supprimer";
             this.bttnSupprimer.UseVisualStyleBackColor = true;
@@ -100,6 +101,7 @@
             // 
             // groupBoxCritere
             // 
+            this.groupBoxCritere.Controls.Add(this.button1);
             this.groupBoxCritere.Controls.Add(this.labelDateLimite);
             this.groupBoxCritere.Controls.Add(this.labelOfres);
             this.groupBoxCritere.Controls.Add(this.dateTimePickerDateLimite);
@@ -135,13 +137,23 @@
             // 
             // buttonModifier
             // 
-            this.buttonModifier.Location = new System.Drawing.Point(544, 187);
+            this.buttonModifier.Location = new System.Drawing.Point(534, 191);
             this.buttonModifier.Name = "buttonModifier";
-            this.buttonModifier.Size = new System.Drawing.Size(98, 46);
+            this.buttonModifier.Size = new System.Drawing.Size(98, 50);
             this.buttonModifier.TabIndex = 4;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
             this.buttonModifier.Click += new System.EventHandler(this.buttonModifier_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(534, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 50);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Evaluer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // OffreCritereDRH
             // 
@@ -170,5 +182,6 @@
         private System.Windows.Forms.Button buttonModifier;
         private System.Windows.Forms.Label labelDateLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn Critères;
+        private System.Windows.Forms.Button button1;
     }
 }

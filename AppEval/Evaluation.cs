@@ -29,6 +29,7 @@ namespace AppEval
             List<string> lesLibelles = new List<string>();
             List<int> lesNotes = new List<int>();
             List<int> lesCoeff = new List<int>();
+            bool erreur = false;
             for (int i=0; i < tableauEvaluation.RowCount; i++)
             {
                 for (int n = 0; n < tableauEvaluation.ColumnCount; n++)
@@ -46,27 +47,38 @@ namespace AppEval
                      
                     if (n == 2)
                     {
-                        string temp = tableauEvaluation[n, i].Value.ToString();
                         try
                         {
+                            erreur = false;
+                            string temp = tableauEvaluation[n, i].Value.ToString();
                             int uneNote = int.Parse(temp);
                             lesNotes.Add(uneNote);
                         }
                         catch
                         {
-                            MessageBox.Show("Vous devez mettre des notes pour chaque critère au format numérique !");
+                            erreur = true;
+                            MessageBox.Show("Vous devez saisir des notes pour chaque critère au format numérique !");
                         }
                     }
                 }
             }
-            
             for (int i = 0; i < lesLibelles.Count; i++)
             {
                 libelleNote[lesLibelles[i]] = lesNotes[i];
             }
             string commentaire = txtCommentaire.Text;
             string temp2 = txtBonusMalus.Text;
-            int bonusMalus = int.Parse(temp2);
+            int bonusMalus = 0;
+            try
+            {
+                erreur = false;
+                bonusMalus = int.Parse(temp2);
+            }
+            catch
+            {
+                erreur = true;
+                MessageBox.Show("Vous devez saisir un bonus/ malus !");
+            }
             double tot = 0;
             double div = 0;
             for(int i = 0; i < lesCoeff.Count; i++)
@@ -78,7 +90,12 @@ namespace AppEval
             double note = tot / div;
             note = Math.Round(note, 2);
             libNote.Text = note.ToString();
-            //DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
+            if (!erreur)
+            {
+                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
+            }
+            
+            
         }
     }
 }
