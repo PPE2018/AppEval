@@ -79,12 +79,48 @@ namespace AppEval
                 }
                 else
                 {
-                    NpgsqlCommand cmd4 = new NpgsqlCommand("DELETE FROM note N INNER JOIN evaluation E ON N.id_evaluation = E.id_evaluation INNER JOIN candidature C ON E.id_candidature= C.id_candidature WHERE id_critere=" + idC+"AND id_offre="+unIdOffre, conn);
+                    NpgsqlCommand cmd4 = new NpgsqlCommand("DELETE FROM noter WHERE id_critere =(SELECT id_critere FROM evaluation E INNER JOIN candidature C ON E.id_cand = C.id_cand WHERE id_critere ="+ idC +" AND id_offre ="+ unIdOffre, conn);
                     cmd4.ExecuteNonQuery();
                 }
                 
                 conn.Close();
             }             
+        }
+
+        public static Dictionary<string,int>ModifierCritere(string libelle,int idOffre)
+        {
+            Dictionary<string, int> critereCoeff = new Dictionary<string, int>();
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                // connect à la bdd
+                conn.Open();
+                using (var cmd2 = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM critere C INNER JOIN associer A ON A.id_critere= C.id_critere WHERE C.id_critere= (SELECT id_critere FROM CRITERE WHERE libelle_critere = '"+libelle+"') AND id_offre="+idOffre, conn))
+                using (var reader = cmd2.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        critereCoeff.Add(reader.GetString(0), reader.GetInt32(1));
+                    }
+                conn.Close();
+            }
+            return critereCoeff;
+        }
+
+        public static void ModifCoeff(string libelle, int coeff)
+        {
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                // modifier le coeff
+                using (var cmd = new NpgsqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "UPDATE associer SET coefficient='" + coeff + "' WHERE id_critere=(SELECT id_critere FROM CRITERE WHERE libelle_critere = '" + libelle + "')";
+                    cmd.ExecuteNonQuery();
+                }
+                conn.Close();
+
+            }
+
         }
 
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)

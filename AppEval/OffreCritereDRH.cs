@@ -17,6 +17,8 @@ namespace AppEval
         {
             InitializeComponent();
 
+            //Pour afficher les offres au commencement de l'appli
+
             foreach (Offre o in DAOOffre.GetLesOffres())
             {
                 listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
@@ -41,7 +43,12 @@ namespace AppEval
 
         private void buttonModifier_Click(object sender, EventArgs e)
         {
-            //this.OffreCritere.Rows.("Critères").Value;
+            groupBoxModifierCritere.Visible = true;
+            foreach(KeyValuePair<string,int> c in DAOCritere.ModifierCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), idOffre))
+            {
+                textBoxNom.Text = c.Key;
+                textBoxCoeff.Text = c.Value.ToString();
+            }
         }
 
         private void listBoxOffre_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,6 +78,49 @@ namespace AppEval
         private void OffreCritere_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonAjouterDate_Click(object sender, EventArgs e)
+        {
+            
+            groupBoxDate.Visible= true;
+            dateTimePickeDateLimite.Value= DAOOffre.GetDateLimite(idOffre);
+        }
+
+        private void buttonValider_Click(object sender, EventArgs e)
+        {
+            //Dès que le bouton est cliqué la groupe box ne s'affiche pas 
+            groupBoxDate.Visible = false;
+
+            //permet de modifier la date limite de l'offre
+            DAOOffre.ModifierDateLimite(idOffre, dateTimePickeDateLimite.Value);
+
+        }
+
+        private void buttonModifierCritere_Click(object sender, EventArgs e)
+        {
+            string coeffText = textBoxCoeff.Text;
+            int coeff;
+            if (coeffText != "")
+            {
+                try
+                {
+                    coeff = int.Parse(coeffText);
+                    DAOCritere.ModifCoeff(textBoxNom.Text, int.Parse(textBoxCoeff.Text));
+                    groupBoxModifierCritere.Visible = false;
+
+
+                }
+                catch
+                {
+                    MessageBox.Show("Le coefficient doit être un numérique !");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vous devez completer tout les champs !");
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

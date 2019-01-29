@@ -25,6 +25,10 @@ namespace AppEval
             this.libelle = unLibelle;
             this.lieu = unLieu;
         }
+        public Offre( DateTime uneDateLimite)
+        {
+            this.dateLimiteOffre = uneDateLimite;
+        }
         public int GetIdOffre()
         {
             return this.IdOffre;
@@ -39,22 +43,6 @@ namespace AppEval
         {
             return this.lieu;
         }
-        public Offre(int unIdOffre, string unLibelle, string uneDescription, string unLieu, string unTypeContrat, double unSalaire, 
-            DateTime uneDateLimite, string uneVideo,DateTime uneDateLimiteOffre)
-        {
-            this.IdOffre = unIdOffre;
-            this.libelle = unLibelle;
-            this.description = uneDescription;
-            this.lieu = unLieu;
-            this.typpeContrat = unTypeContrat;
-            this.salaire = unSalaire;
-            this.dateLimite = uneDateLimite;
-            this.video = uneVideo;
-            this.supprimer = false;
-            this.dateLimiteOffre = uneDateLimiteOffre;
-        }
-
-
 
     }
 }
