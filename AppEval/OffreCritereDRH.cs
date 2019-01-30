@@ -23,11 +23,11 @@ namespace AppEval
             {
                 listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
             }
+            listBoxOffre.SetSelected(0, true);
         }
 
         private void buttonAjouter_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AjoutCritere c = new AjoutCritere(idOffre);
             c.Show();
 
@@ -121,6 +121,12 @@ namespace AppEval
                 MessageBox.Show("Vous devez completer tout les champs !");
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Evaluation evaluation = new Evaluation();
+            evaluation.Show();
         }
     }
 }

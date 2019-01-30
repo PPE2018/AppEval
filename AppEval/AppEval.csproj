@@ -65,6 +65,7 @@
       <DependentUpon>AjoutCritere.cs</DependentUpon>
     </Compile>
     <Compile Include="Associer.cs" />
+    <Compile Include="Candidature.cs" />
     <Compile Include="Connexion.cs" />
     <Compile Include="Critere.cs" />
     <Compile Include="DAOEvaluation.cs" />
