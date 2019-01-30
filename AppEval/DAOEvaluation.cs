@@ -9,7 +9,7 @@ namespace AppEval
 {
     public static class DAOEvaluation
     {
-        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idOffre)
+        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idCand, double noteTotal)
         {
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
@@ -17,10 +17,10 @@ namespace AppEval
 
                 List<int> lesId = new List<int>();
                 List<int> lesNotes = new List<int>();
-                foreach(KeyValuePair<string, int> uneNote in lesLibelleNote)
+                foreach (KeyValuePair<string, int> uneNote in lesLibelleNote)
                 {
                     string libelle = uneNote.Key;
-                    using (var cmd2 = new NpgsqlCommand("SELECT id_critere FROM critere WHERE libelle_critere LIKE '"+libelle+"'", conn))
+                    using (var cmd2 = new NpgsqlCommand("SELECT id_critere FROM critere WHERE libelle_critere LIKE '" + libelle + "'", conn))
                     using (var reader = cmd2.ExecuteReader())
                         while (reader.Read())
                         {
@@ -31,8 +31,8 @@ namespace AppEval
                 using (var cmd3 = new NpgsqlCommand())
                 {
                     cmd3.Connection = conn;
-                    //RH à confirmer, id_cand à changer !!!!!!!!!!
-                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, 'test', '"+DateTime.Now.ToShortDateString()+"',"+bonusMalus+",'"+commentaire+"',1)";
+                    //RH à confirmer !!!!!!!!!!
+                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand, notetotal) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +"," + noteTotal +")";
                     cmd3.ExecuteNonQuery();
                 }
 
@@ -54,13 +54,30 @@ namespace AppEval
                     using (var cmd3 = new NpgsqlCommand())
                     {
                         cmd3.Connection = conn;
-                        //Id de l'offre à changer !!!
-                        cmd3.CommandText = "INSERT INTO noter (id_eval, id_critere, note) VALUES ("+id+", "+uneNote.Key+"," + uneNote.Value + ")";
+                        cmd3.CommandText = "INSERT INTO noter (id_eval, id_critere, note) VALUES (" + id + ", " + uneNote.Key + "," + uneNote.Value + ")";
                         cmd3.ExecuteNonQuery();
                     }
                 }
                 conn.Close();
             }
+        }
+
+        public static List<Candidature> GetCandidature(int idOffre)
+        {
+            List<Candidature> lesCandidatures = new List<Candidature>();
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT id_cand, nom_cand, prenom_cand FROM candidature WHERE id_offre = "+ idOffre, conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        Candidature c = new Candidature(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                        lesCandidatures.Add(c);
+                    }
+                conn.Close();
+            }
+            return lesCandidatures;
         }
     }
 }

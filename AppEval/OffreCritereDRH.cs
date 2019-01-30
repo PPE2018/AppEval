@@ -125,7 +125,7 @@ namespace AppEval
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Evaluation evaluation = new Evaluation(idOffre);
+            Evaluation evaluation = new Evaluation();
             evaluation.Show();
         }
     }

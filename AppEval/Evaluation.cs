@@ -13,6 +13,8 @@ namespace AppEval
     public partial class Evaluation : Form
     {
         int idOffre;
+        int idCand;
+        double noteTotal;
         public Evaluation()
         {
             InitializeComponent();
@@ -91,18 +93,32 @@ namespace AppEval
             double note = tot / div;
             note = Math.Round(note, 2);
             libNote.Text = note.ToString();
+            this.noteTotal = note;
+
+            //Recuperation idCand à partir de la listBox des candidature
+            string value = listeCandidats.SelectedItem.ToString();
+            string id = "";
+            bool stop = false;
+            foreach (Char c in value)
+            {
+                if (c != '-' && !stop)
+                {
+                    id += c;
+                }
+                else
+                {
+                    stop = true;
+                }
+            }
+            this.idCand = int.Parse(id);
+
             if (!erreur)
             {
-                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus);
+                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand, noteTotal);
             }
-            
-            
         }
 
-        private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void listeOffres_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -126,6 +142,12 @@ namespace AppEval
             {
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
+            listeCandidats.Items.Clear();
+            foreach(Candidature candidature in DAOEvaluation.GetCandidature(idOffre))
+            {
+                listeCandidats.Items.Add(candidature.GetIdCand().ToString() + "-" + candidature.GetNom() + candidature.GetPrenom());
+            }
+            listeCandidats.SelectedIndex = 0;
         }
     }
 }

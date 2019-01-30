@@ -65,7 +65,6 @@
             this.tableauEvaluation.Name = "tableauEvaluation";
             this.tableauEvaluation.Size = new System.Drawing.Size(883, 228);
             this.tableauEvaluation.TabIndex = 0;
-            this.tableauEvaluation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableauEvaluation_CellContentClick);
             // 
             // Criteres
             // 
