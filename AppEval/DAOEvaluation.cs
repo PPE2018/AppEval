@@ -62,5 +62,25 @@ namespace AppEval
                 conn.Close();
             }
         }
+
+        public static Dictionary<string, double> AfficherTableauBord(int idCand)
+        {
+            Dictionary<string, double> resul = new Dictionary<string, double>();
+
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                // connect à la bdd
+                conn.Open();
+                using (var cmd2 = new NpgsqlCommand("SELECT nom_prenom_RH, notetotal FROM EVALUATION E INNER JOIN CANDIDATURE C ON Cid_cand= E.id_cand WHERE E.id_cand='" + idCand, conn))
+                using (var reader = cmd2.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        resul.Add(reader.GetString(0), reader.GetInt32(1));
+                    }
+                conn.Close();
+            }
+            return resul;
+
+        }
     }
 }

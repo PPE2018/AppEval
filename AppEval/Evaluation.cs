@@ -110,5 +110,12 @@ namespace AppEval
                 tableauEvaluation.Rows.Add(kvp.Key, kvp.Value);
             }
         }
+
+        private void buttonTableauBord_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TableauBord c = new TableauBord();
+            c.Show();
+        }
     }
 }

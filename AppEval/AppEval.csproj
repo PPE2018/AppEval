@@ -77,6 +77,7 @@
     <Compile Include="Evaluation.Designer.cs">
       <DependentUpon>Evaluation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Evalutation.cs" />
     <Compile Include="Offre.cs" />
     <Compile Include="OffreCritereDRH.cs">
       <SubType>Form</SubType>
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableauBord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableauBord.Designer.cs">
+      <DependentUpon>TableauBord.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AjoutCritere.resx">
       <DependentUpon>AjoutCritere.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +111,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TableauBord.resx">
+      <DependentUpon>TableauBord.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
