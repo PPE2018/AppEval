@@ -149,5 +149,10 @@ namespace AppEval
             }
             listeCandidats.SelectedIndex = 0;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PDF.EditerBrochure(DAOEvaluation.GetCandidatureById(idCand).GetNom() + "-" + DAOEvaluation.GetCandidatureById(idCand).GetPrenom());
+        }
     }
 }
