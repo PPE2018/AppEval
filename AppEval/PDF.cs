@@ -14,7 +14,7 @@ namespace AppEval
 {
     public static class PDF
     {
-        public static void EditerBrochure(string nomCandidat, )
+        public static void EditerBrochure(string nomCandidat)
         {
             Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(nomCandidat + ".pdf", FileMode.Create));
