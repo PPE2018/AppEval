@@ -150,6 +150,18 @@ namespace AppEval
             listeCandidats.SelectedIndex = 0;
         }
 
+        private void buttonTableauBord_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TableauBord c = new TableauBord();
+            c.Show();
+        }
+
+        private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             PDF.EditerBrochure(DAOEvaluation.GetCandidatureById(idCand).GetNom() + "-" + DAOEvaluation.GetCandidatureById(idCand).GetPrenom());
