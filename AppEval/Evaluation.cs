@@ -156,5 +156,10 @@ namespace AppEval
             TableauBord c = new TableauBord();
             c.Show();
         }
+
+        private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
