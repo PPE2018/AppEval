@@ -31,10 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxTableauBord = new System.Windows.Forms.GroupBox();
             this.dataGridViewTableauBord = new System.Windows.Forms.DataGridView();
-            this.Classement = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonFermer = new System.Windows.Forms.Button();
             this.Evaluateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note_Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonFermer = new System.Windows.Forms.Button();
             this.groupBoxTableauBord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTableauBord)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +61,6 @@
             // 
             this.dataGridViewTableauBord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTableauBord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Classement,
             this.Evaluateur,
             this.Note_Moyenne});
             this.dataGridViewTableauBord.Location = new System.Drawing.Point(27, 19);
@@ -72,12 +70,15 @@
             this.dataGridViewTableauBord.TabIndex = 0;
             this.dataGridViewTableauBord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTableauBord_CellContentClick);
             // 
-            // Classement
+            // buttonFermer
             // 
-            this.Classement.Frozen = true;
-            this.Classement.HeaderText = "Classement";
-            this.Classement.Name = "Classement";
-            this.Classement.ReadOnly = true;
+            this.buttonFermer.Location = new System.Drawing.Point(191, 404);
+            this.buttonFermer.Name = "buttonFermer";
+            this.buttonFermer.Size = new System.Drawing.Size(117, 33);
+            this.buttonFermer.TabIndex = 2;
+            this.buttonFermer.Text = "Fermer";
+            this.buttonFermer.UseVisualStyleBackColor = true;
+            this.buttonFermer.Click += new System.EventHandler(this.button1_Click);
             // 
             // Evaluateur
             // 
@@ -92,16 +93,6 @@
             this.Note_Moyenne.HeaderText = "Note_Moyenne";
             this.Note_Moyenne.Name = "Note_Moyenne";
             this.Note_Moyenne.ReadOnly = true;
-            // 
-            // buttonFermer
-            // 
-            this.buttonFermer.Location = new System.Drawing.Point(191, 404);
-            this.buttonFermer.Name = "buttonFermer";
-            this.buttonFermer.Size = new System.Drawing.Size(117, 33);
-            this.buttonFermer.TabIndex = 2;
-            this.buttonFermer.Text = "Fermer";
-            this.buttonFermer.UseVisualStyleBackColor = true;
-            this.buttonFermer.Click += new System.EventHandler(this.button1_Click);
             // 
             // TableauBord
             // 
@@ -125,9 +116,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBoxTableauBord;
         private System.Windows.Forms.DataGridView dataGridViewTableauBord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Classement;
+        private System.Windows.Forms.Button buttonFermer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Evaluateur;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note_Moyenne;
-        private System.Windows.Forms.Button buttonFermer;
     }
 }
