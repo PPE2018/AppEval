@@ -71,6 +71,7 @@
     <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOAssocier.cs" />
     <Compile Include="DAOCritere.cs" />
+    <Compile Include="DAONoter.cs" />
     <Compile Include="DAOOffre.cs" />
     <Compile Include="Evaluation.cs">
       <SubType>Form</SubType>
