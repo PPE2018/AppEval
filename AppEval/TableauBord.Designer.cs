@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxTableauBord = new System.Windows.Forms.GroupBox();
             this.dataGridViewTableauBord = new System.Windows.Forms.DataGridView();
-            this.buttonFermer = new System.Windows.Forms.Button();
             this.Evaluateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note_Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Candidat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonFermer = new System.Windows.Forms.Button();
             this.labelNomOffre = new System.Windows.Forms.Label();
             this.groupBoxTableauBord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTableauBord)).BeginInit();
@@ -75,16 +75,6 @@
             this.dataGridViewTableauBord.TabIndex = 0;
             this.dataGridViewTableauBord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTableauBord_CellContentClick);
             // 
-            // buttonFermer
-            // 
-            this.buttonFermer.Location = new System.Drawing.Point(191, 404);
-            this.buttonFermer.Name = "buttonFermer";
-            this.buttonFermer.Size = new System.Drawing.Size(117, 33);
-            this.buttonFermer.TabIndex = 2;
-            this.buttonFermer.Text = "Fermer";
-            this.buttonFermer.UseVisualStyleBackColor = true;
-            this.buttonFermer.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Evaluateur
             // 
             this.Evaluateur.HeaderText = "Evaluateur";
@@ -109,10 +99,20 @@
             this.Candidat.Name = "Candidat";
             this.Candidat.ReadOnly = true;
             // 
+            // buttonFermer
+            // 
+            this.buttonFermer.Location = new System.Drawing.Point(191, 404);
+            this.buttonFermer.Name = "buttonFermer";
+            this.buttonFermer.Size = new System.Drawing.Size(117, 33);
+            this.buttonFermer.TabIndex = 2;
+            this.buttonFermer.Text = "Fermer";
+            this.buttonFermer.UseVisualStyleBackColor = true;
+            this.buttonFermer.Click += new System.EventHandler(this.button1_Click);
+            // 
             // labelNomOffre
             // 
             this.labelNomOffre.AutoSize = true;
-            this.labelNomOffre.Location = new System.Drawing.Point(340, 28);
+            this.labelNomOffre.Location = new System.Drawing.Point(310, 28);
             this.labelNomOffre.Name = "labelNomOffre";
             this.labelNomOffre.Size = new System.Drawing.Size(72, 13);
             this.labelNomOffre.TabIndex = 3;
