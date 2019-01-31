@@ -1,6 +1,6 @@
 ﻿namespace AppEval
 {
-    partial class Evaluation
+    partial class EvaluationRH
     {
         /// <summary>
         /// Required designer variable.

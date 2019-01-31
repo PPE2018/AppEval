@@ -9,7 +9,7 @@ namespace AppEval
 {
     public static class DAOEvaluation
     {
-        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idCand, double noteTotal)
+        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idCand)
         {
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
@@ -32,7 +32,7 @@ namespace AppEval
                 {
                     cmd3.Connection = conn;
                     //RH à confirmer !!!!!!!!!!
-                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand, notetotal) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +"," + noteTotal +")";
+                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand, notetotal) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +")";
                     cmd3.ExecuteNonQuery();
                 }
 
@@ -62,6 +62,23 @@ namespace AppEval
             }
         }
 
+        public static double GetNoteTot(int idCand)
+        {
+            double noteTot = 0;
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT notemoyenne FROM notemoyennes WHERE id_cand = " + idCand, conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        noteTot = reader.GetInt32(0);
+                    }
+                conn.Close();
+            }
+            return noteTot;
+        }
+
         public static List<Candidature> GetCandidature(int idOffre)
         {
             List<Candidature> lesCandidatures = new List<Candidature>();
@@ -87,7 +104,7 @@ namespace AppEval
             {
                 // connect à la bdd
                 conn.Open();
-                using (var cmd2 = new NpgsqlCommand("SELECT nom_prenom_RH, notetotal FROM EVALUATION E INNER JOIN CANDIDATURE C ON C.id_cand = E.id_cand WHERE E.id_cand =" +1+"ORDER BY notetotal desc", conn))
+                using (var cmd2 = new NpgsqlCommand("SELECT nom_prenom_RH, notetotal FROM EVALUATION INNER JOIN CANDIDATURE C ON C.id_cand = E.id_cand WHERE E.id_cand =" +1+"ORDER BY notetotal desc", conn))
                 using (var reader = cmd2.ExecuteReader())
                     while (reader.Read())
                     {
@@ -96,7 +113,6 @@ namespace AppEval
                 conn.Close();
 
             }
-                
             return resul;
         }
 
@@ -117,10 +133,23 @@ namespace AppEval
             }
             return c;
         }
-        //TODO
-        //public static List<Evaluation> GetEvaluation(int idCand)
-        //{
-
-        //}
+        public static List<Evaluation> GetEvaluations(int idCand)
+        {
+            List<Evaluation> lesEvaluations = new List<Evaluation>();
+            Evaluation e = null;
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT id_eval, nom_prenom_rh, date_evaluation, bonusmalus, notetotal, commentaire_eval FROM evaluation WHERE id_cand = " + idCand, conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        e = new Evaluation(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetDouble(4), reader.GetString(5));
+                        lesEvaluations.Add(e);
+                    }
+                conn.Close();
+            }
+            return lesEvaluations;
+        }
     }
 }

@@ -75,13 +75,13 @@
     <Compile Include="DAOAssocier.cs" />
     <Compile Include="DAOCritere.cs" />
     <Compile Include="DAOOffre.cs" />
-    <Compile Include="Evaluation.cs">
+    <Compile Include="EvaluationRH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evaluation.Designer.cs">
-      <DependentUpon>Evaluation.cs</DependentUpon>
+    <Compile Include="EvaluationRH.Designer.cs">
+      <DependentUpon>EvaluationRH.cs</DependentUpon>
     </Compile>
-    <Compile Include="Evalutation.cs" />
+    <Compile Include="Evaluation.cs" />
     <Compile Include="Offre.cs" />
     <Compile Include="OffreCritereDRH.cs">
       <SubType>Form</SubType>
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="AjoutCritere.resx">
       <DependentUpon>AjoutCritere.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Evaluation.resx">
-      <DependentUpon>Evaluation.cs</DependentUpon>
+    <EmbeddedResource Include="EvaluationRH.resx">
+      <DependentUpon>EvaluationRH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OffreCritereDRH.resx">
       <DependentUpon>OffreCritereDRH.cs</DependentUpon>
