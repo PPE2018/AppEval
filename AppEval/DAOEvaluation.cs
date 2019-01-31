@@ -79,6 +79,7 @@ namespace AppEval
             }
             return lesCandidatures;
         }
+
         public static Dictionary<string, double> AfficherTableauBord(int idCand)
         {
             Dictionary<string, double> resul = new Dictionary<string, double>();
@@ -98,5 +99,28 @@ namespace AppEval
                 
             return resul;
         }
+
+        public static Candidature GetCandidatureById(int idCand)
+        {
+            List<Candidature> lesCandidatures = new List<Candidature>();
+            Candidature c = null;
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT id_cand, nom_cand, prenom_cand FROM candidature WHERE id_cand = " + idCand, conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        c = new Candidature(reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+                    }
+                conn.Close();
+            }
+            return c;
+        }
+        //TODO
+        //public static List<Evaluation> GetEvaluation(int idCand)
+        //{
+
+        //}
     }
 }

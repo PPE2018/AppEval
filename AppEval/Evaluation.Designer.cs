@@ -45,7 +45,6 @@
             this.listeOffres = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listeCandidats = new System.Windows.Forms.ListBox();
-            this.buttonTableauBord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -63,9 +62,8 @@
             this.Note});
             this.tableauEvaluation.Location = new System.Drawing.Point(6, 19);
             this.tableauEvaluation.Name = "tableauEvaluation";
-            this.tableauEvaluation.Size = new System.Drawing.Size(643, 196);
+            this.tableauEvaluation.Size = new System.Drawing.Size(662, 185);
             this.tableauEvaluation.TabIndex = 0;
-            this.tableauEvaluation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableauEvaluation_CellContentClick);
             // 
             // Criteres
             // 
@@ -124,7 +122,7 @@
             this.groupBox1.Controls.Add(this.txtCommentaire);
             this.groupBox1.Location = new System.Drawing.Point(421, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(662, 385);
+            this.groupBox1.Size = new System.Drawing.Size(678, 384);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Evaluer";
@@ -171,14 +169,15 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "PDF";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listeOffres);
             this.groupBox4.Location = new System.Drawing.Point(23, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox4.Size = new System.Drawing.Size(169, 374);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
@@ -188,7 +187,7 @@
             // 
             this.listeOffres.FormattingEnabled = true;
             this.listeOffres.Location = new System.Drawing.Point(14, 17);
-            this.listeOffres.Margin = new System.Windows.Forms.Padding(2);
+            this.listeOffres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listeOffres.Name = "listeOffres";
             this.listeOffres.Size = new System.Drawing.Size(134, 342);
             this.listeOffres.TabIndex = 8;
@@ -198,9 +197,9 @@
             // 
             this.groupBox2.Controls.Add(this.listeCandidats);
             this.groupBox2.Location = new System.Drawing.Point(225, 32);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Size = new System.Drawing.Size(169, 374);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -210,27 +209,16 @@
             // 
             this.listeCandidats.FormattingEnabled = true;
             this.listeCandidats.Location = new System.Drawing.Point(20, 17);
-            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2);
+            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listeCandidats.Name = "listeCandidats";
             this.listeCandidats.Size = new System.Drawing.Size(134, 342);
             this.listeCandidats.TabIndex = 8;
-            // 
-            // buttonTableauBord
-            // 
-            this.buttonTableauBord.Location = new System.Drawing.Point(572, 443);
-            this.buttonTableauBord.Name = "buttonTableauBord";
-            this.buttonTableauBord.Size = new System.Drawing.Size(101, 35);
-            this.buttonTableauBord.TabIndex = 12;
-            this.buttonTableauBord.Text = "Tableau de bord";
-            this.buttonTableauBord.UseVisualStyleBackColor = true;
-            this.buttonTableauBord.Click += new System.EventHandler(this.buttonTableauBord_Click);
             // 
             // Evaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 487);
-            this.Controls.Add(this.buttonTableauBord);
+            this.ClientSize = new System.Drawing.Size(1119, 496);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
@@ -268,6 +256,5 @@
         private System.Windows.Forms.ListBox listeOffres;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listeCandidats;
-        private System.Windows.Forms.Button buttonTableauBord;
     }
 }
