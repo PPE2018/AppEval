@@ -19,6 +19,7 @@ namespace AppEval
             Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(nomCandidat + "-" + prenomCandidat +".pdf", FileMode.Create));
             document.Open();
+
             PdfContentByte cb = writer.DirectContent;
             cb.BeginText();
             BaseFont bf = BaseFont.CreateFont("C:\\WINDOWS\\FONTS\\ARIAL.TTF", BaseFont.CP1252, true);
@@ -73,16 +74,13 @@ namespace AppEval
             table.AddCell("Commentaire");
             foreach (Evaluation e in lesEvaluations)
             {
-
                 table.AddCell(e.GetNomPrenomRH());
-
                 table.AddCell(e.NoteTotal().ToString());
-
                 table.AddCell(e.GetCommentaire());
-
-
             }
-            document.Add(table);
+            Paragraph monParaph1 = new Paragraph();
+            monParaph1.Add(table);
+            document.Add(monParaph1);
             document.Close();
         }
     }

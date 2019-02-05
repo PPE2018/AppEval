@@ -8,7 +8,6 @@ namespace AppEval
 {
     public static class DAOCritere
     {
-
         public static void AjoutCritere(Critere unCritere, Associer uneAssociation, int unIdOffre)
         {
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
