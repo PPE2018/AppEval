@@ -31,12 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxTableauBord = new System.Windows.Forms.GroupBox();
             this.dataGridViewTableauBord = new System.Windows.Forms.DataGridView();
-            this.Evaluateur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note_Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Candidat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonFermer = new System.Windows.Forms.Button();
             this.labelNomOffre = new System.Windows.Forms.Label();
+            this.Candidat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moyenne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxTableauBord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTableauBord)).BeginInit();
             this.SuspendLayout();
@@ -64,40 +62,14 @@
             // 
             this.dataGridViewTableauBord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTableauBord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Evaluateur,
-            this.Note,
-            this.Note_Moyenne,
-            this.Candidat});
+            this.Candidat,
+            this.Moyenne});
             this.dataGridViewTableauBord.Location = new System.Drawing.Point(27, 19);
             this.dataGridViewTableauBord.Name = "dataGridViewTableauBord";
             this.dataGridViewTableauBord.ReadOnly = true;
             this.dataGridViewTableauBord.Size = new System.Drawing.Size(443, 255);
             this.dataGridViewTableauBord.TabIndex = 0;
             this.dataGridViewTableauBord.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTableauBord_CellContentClick);
-            // 
-            // Evaluateur
-            // 
-            this.Evaluateur.HeaderText = "Evaluateur";
-            this.Evaluateur.Name = "Evaluateur";
-            this.Evaluateur.ReadOnly = true;
-            // 
-            // Note
-            // 
-            this.Note.HeaderText = "Note";
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            // 
-            // Note_Moyenne
-            // 
-            this.Note_Moyenne.HeaderText = "Note_Moyenne";
-            this.Note_Moyenne.Name = "Note_Moyenne";
-            this.Note_Moyenne.ReadOnly = true;
-            // 
-            // Candidat
-            // 
-            this.Candidat.HeaderText = "Candidat";
-            this.Candidat.Name = "Candidat";
-            this.Candidat.ReadOnly = true;
             // 
             // buttonFermer
             // 
@@ -117,6 +89,18 @@
             this.labelNomOffre.Size = new System.Drawing.Size(72, 13);
             this.labelNomOffre.TabIndex = 3;
             this.labelNomOffre.Text = "Nom de l\'offre";
+            // 
+            // Candidat
+            // 
+            this.Candidat.HeaderText = "Candidat";
+            this.Candidat.Name = "Candidat";
+            this.Candidat.ReadOnly = true;
+            // 
+            // Moyenne
+            // 
+            this.Moyenne.HeaderText = "Moyenne";
+            this.Moyenne.Name = "Moyenne";
+            this.Moyenne.ReadOnly = true;
             // 
             // TableauBord
             // 
@@ -142,10 +126,8 @@
         private System.Windows.Forms.GroupBox groupBoxTableauBord;
         private System.Windows.Forms.DataGridView dataGridViewTableauBord;
         private System.Windows.Forms.Button buttonFermer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Evaluateur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note_Moyenne;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Candidat;
         private System.Windows.Forms.Label labelNomOffre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Candidat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moyenne;
     }
 }
