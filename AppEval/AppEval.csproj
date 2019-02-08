@@ -76,12 +76,14 @@
     <Compile Include="ConnexionRH.Designer.cs">
       <DependentUpon>ConnexionRH.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnexioOdoo.cs" />
     <Compile Include="Critere.cs" />
     <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOAssocier.cs" />
     <Compile Include="DAOCritere.cs" />
     <Compile Include="DAONoter.cs" />
     <Compile Include="DAOOffre.cs" />
+    <Compile Include="DOAConnectOdoo.cs" />
     <Compile Include="EvaluationRH.cs">
       <SubType>Form</SubType>
     </Compile>
