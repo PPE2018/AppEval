@@ -91,6 +91,8 @@ namespace AppEval
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            EvaluationRH eval = new EvaluationRH();
+            eval.Show();
            
         }
 
@@ -98,5 +100,7 @@ namespace AppEval
         {
             
         }
+
+
     }
 }

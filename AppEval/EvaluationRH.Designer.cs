@@ -217,11 +217,11 @@
             // 
             // bttnReunion
             // 
-            this.bttnReunion.Location = new System.Drawing.Point(638, 422);
+            this.bttnReunion.Location = new System.Drawing.Point(622, 449);
             this.bttnReunion.Name = "bttnReunion";
-            this.bttnReunion.Size = new System.Drawing.Size(100, 49);
+            this.bttnReunion.Size = new System.Drawing.Size(94, 23);
             this.bttnReunion.TabIndex = 12;
-            this.bttnReunion.Text = "réunion";
+            this.bttnReunion.Text = "Tableau de bord";
             this.bttnReunion.UseVisualStyleBackColor = true;
             this.bttnReunion.Click += new System.EventHandler(this.bttnReunion_Click);
             // 
@@ -239,6 +239,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EvaluationRH";
             this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.EvaluationRH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

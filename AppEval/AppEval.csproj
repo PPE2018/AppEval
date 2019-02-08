@@ -70,6 +70,12 @@
     <Compile Include="Associer.cs" />
     <Compile Include="Candidature.cs" />
     <Compile Include="Connexion.cs" />
+    <Compile Include="ConnexionRH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnexionRH.Designer.cs">
+      <DependentUpon>ConnexionRH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Critere.cs" />
     <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOAssocier.cs" />
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="AjoutCritere.resx">
       <DependentUpon>AjoutCritere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnexionRH.resx">
+      <DependentUpon>ConnexionRH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluationRH.resx">
       <DependentUpon>EvaluationRH.cs</DependentUpon>

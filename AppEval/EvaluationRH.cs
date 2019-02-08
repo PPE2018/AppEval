@@ -152,5 +152,10 @@ namespace AppEval
             TableauBord c = new TableauBord(idOffre);
             c.Show();
         }
+
+        private void EvaluationRH_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
