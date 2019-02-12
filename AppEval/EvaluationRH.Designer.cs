@@ -45,6 +45,7 @@
             this.listeOffres = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listeCandidats = new System.Windows.Forms.ListBox();
+            this.bttnReunion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -175,9 +176,9 @@
             // 
             this.groupBox4.Controls.Add(this.listeOffres);
             this.groupBox4.Location = new System.Drawing.Point(23, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(169, 374);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
@@ -187,7 +188,7 @@
             // 
             this.listeOffres.FormattingEnabled = true;
             this.listeOffres.Location = new System.Drawing.Point(14, 17);
-            this.listeOffres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listeOffres.Margin = new System.Windows.Forms.Padding(2);
             this.listeOffres.Name = "listeOffres";
             this.listeOffres.Size = new System.Drawing.Size(134, 342);
             this.listeOffres.TabIndex = 8;
@@ -197,9 +198,9 @@
             // 
             this.groupBox2.Controls.Add(this.listeCandidats);
             this.groupBox2.Location = new System.Drawing.Point(225, 32);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(169, 374);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -209,24 +210,36 @@
             // 
             this.listeCandidats.FormattingEnabled = true;
             this.listeCandidats.Location = new System.Drawing.Point(20, 17);
-            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2);
             this.listeCandidats.Name = "listeCandidats";
             this.listeCandidats.Size = new System.Drawing.Size(134, 342);
             this.listeCandidats.TabIndex = 8;
             // 
-            // Evaluation
+            // bttnReunion
+            // 
+            this.bttnReunion.Location = new System.Drawing.Point(622, 449);
+            this.bttnReunion.Name = "bttnReunion";
+            this.bttnReunion.Size = new System.Drawing.Size(94, 23);
+            this.bttnReunion.TabIndex = 12;
+            this.bttnReunion.Text = "Tableau de bord";
+            this.bttnReunion.UseVisualStyleBackColor = true;
+            this.bttnReunion.Click += new System.EventHandler(this.bttnReunion_Click);
+            // 
+            // EvaluationRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 496);
+            this.Controls.Add(this.bttnReunion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.libNote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Evaluation";
+            this.Name = "EvaluationRH";
             this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.EvaluationRH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -256,5 +269,6 @@
         private System.Windows.Forms.ListBox listeOffres;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listeCandidats;
+        private System.Windows.Forms.Button bttnReunion;
     }
 }
