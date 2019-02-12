@@ -15,7 +15,7 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(Connexion.ConnectOdoo()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT name FROM hr_employee", conn))
+                using (var cmd = new NpgsqlCommand("SELECT hr_employee.name FROM hr_employee INNER JOIN hr_department ON hr_employee.department_id = hr_department.id", conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
