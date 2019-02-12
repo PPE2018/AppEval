@@ -8,5 +8,9 @@ namespace AppEval
 {
     public static class DOAConnectOdoo
     {
+        //public static Dictionary<string, string> ConnectionPersonne()
+//{
+ //           Dictionary<string, string> connect
+//        }
     }
 }
