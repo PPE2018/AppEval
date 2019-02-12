@@ -14,8 +14,10 @@ namespace AppEval
     {
         int idOffre;
         int idCand;
-        public EvaluationRH()
+        string nomRH;
+        public EvaluationRH(string unNomRH)
         {
+            this.nomRH = unNomRH;
             InitializeComponent();
             
             foreach (Offre o in DAOOffre.GetLesOffres())
@@ -102,7 +104,7 @@ namespace AppEval
 
             if (!erreur)
             {
-                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand);
+                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand, nomRH);
             }
         }
 
@@ -149,7 +151,7 @@ namespace AppEval
         private void bttnReunion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TableauBord c = new TableauBord(idOffre);
+            TableauBord c = new TableauBord(idOffre, nomRH);
             c.Show();
         }
 

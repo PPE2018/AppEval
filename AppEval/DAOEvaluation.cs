@@ -9,7 +9,7 @@ namespace AppEval
 {
     public static class DAOEvaluation
     {
-        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idCand)
+        public static void AjouterEvaluation(Dictionary<string, int> lesLibelleNote, string commentaire, int bonusMalus, int idCand, string nomRH)
         {
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
@@ -31,8 +31,7 @@ namespace AppEval
                 using (var cmd3 = new NpgsqlCommand())
                 {
                     cmd3.Connection = conn;
-                    //RH à confirmer !!!!!!!!!!
-                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +")";
+                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, '"+ nomRH + "','" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +")";
                     cmd3.ExecuteNonQuery();
                 }
 
