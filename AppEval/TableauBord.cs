@@ -16,11 +16,11 @@ namespace AppEval
         public TableauBord()
         {
             InitializeComponent();
-            foreach (KeyValuePair<string, double> c in DAOEvaluation.AfficherTableauBord(idCand))
-            {
+            //foreach (KeyValuePair<string, double> c in DAOEvaluation.AfficherTableauBord(idCand))
+            /*{
                 dataGridViewTableauBord.Rows.Add(c.Key, c.Value);
 
-            }
+            }*/
             
         }
 

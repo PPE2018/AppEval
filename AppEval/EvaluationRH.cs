@@ -81,7 +81,7 @@ namespace AppEval
                 erreur = true;
                 MessageBox.Show("Vous devez saisir un bonus / malus !");
             }
-            libNote.Text = DAOEvaluation.GetNoteTot(idCand).ToString();
+            libNote.Text = DAOEvaluation.GetNoteTot(DAOEvaluation.GetIdLastEval()).ToString();
 
             //Recuperation idCand à partir de la listBox des candidature
             string value = listeCandidats.SelectedItem.ToString();
