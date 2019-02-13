@@ -32,7 +32,7 @@ namespace AppEval
                 {
                     cmd3.Connection = conn;
                     //RH à confirmer !!!!!!!!!!
-                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand, notetotal) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +")";
+                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, 'test', '" + DateTime.Now.ToShortDateString() + "'," + bonusMalus + ",'" + commentaire + "'," + idCand +")";
                     cmd3.ExecuteNonQuery();
                 }
 
@@ -65,10 +65,17 @@ namespace AppEval
         public static double GetNoteTot(int idCand)
         {
             double noteTot = 0;
+            int id_eval = 0;
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT notemoyenne FROM notemoyennes WHERE id_cand = " + idCand, conn))
+                using (var cmd = new NpgsqlCommand("SELECT id_eval FROM evaluation ORDER BY id_eval DESC LIMIT 1", conn))
+                using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
+                    {
+                        id_eval = reader.GetInt32(0);
+                    }
+                using (var cmd = new NpgsqlCommand("SELECT notetotal FROM noteRH WHERE nom_cand = '" + GetCandidatureById(idCand).GetNom() +"' AND prenom_cand = '" + GetCandidatureById(idCand).GetPrenom() +"' AND id_eval = " + id_eval, conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -140,11 +147,11 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT id_eval, nom_prenom_rh, date_evaluation, bonusmalus, notetotal, commentaire_eval FROM evaluation WHERE id_cand = " + idCand, conn))
+                using (var cmd = new NpgsqlCommand("SELECT id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval FROM evaluation WHERE id_cand = " + idCand, conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        e = new Evaluation(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetDouble(4), reader.GetString(5));
+                        e = new Evaluation(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetString(4));
                         lesEvaluations.Add(e);
                     }
                 conn.Close();

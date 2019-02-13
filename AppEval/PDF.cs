@@ -59,7 +59,7 @@ namespace AppEval
             cb.SetTextMatrix(200, 575);
             cb.ShowText(prenomCandidat);
             cb.EndText();
-
+            
             PdfPTable table = new PdfPTable(3);
             float[] widths = new float[] { 1.5f, 1f, 3f};
             table.SetWidths(widths);
@@ -75,7 +75,6 @@ namespace AppEval
             foreach (Evaluation e in lesEvaluations)
             {
                 table.AddCell(e.GetNomPrenomRH());
-                table.AddCell(e.NoteTotal().ToString());
                 table.AddCell(e.GetCommentaire());
             }
             Paragraph monParaph1 = new Paragraph();

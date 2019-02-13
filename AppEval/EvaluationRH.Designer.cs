@@ -61,9 +61,10 @@
             this.Criteres,
             this.Coefficient,
             this.Note});
-            this.tableauEvaluation.Location = new System.Drawing.Point(6, 19);
+            this.tableauEvaluation.Location = new System.Drawing.Point(8, 23);
+            this.tableauEvaluation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableauEvaluation.Name = "tableauEvaluation";
-            this.tableauEvaluation.Size = new System.Drawing.Size(662, 185);
+            this.tableauEvaluation.Size = new System.Drawing.Size(883, 228);
             this.tableauEvaluation.TabIndex = 0;
             // 
             // Criteres
@@ -88,26 +89,29 @@
             // 
             // txtCommentaire
             // 
-            this.txtCommentaire.Location = new System.Drawing.Point(6, 234);
+            this.txtCommentaire.Location = new System.Drawing.Point(8, 288);
+            this.txtCommentaire.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCommentaire.Multiline = true;
             this.txtCommentaire.Name = "txtCommentaire";
-            this.txtCommentaire.Size = new System.Drawing.Size(652, 68);
+            this.txtCommentaire.Size = new System.Drawing.Size(868, 83);
             this.txtCommentaire.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 218);
+            this.label1.Location = new System.Drawing.Point(8, 268);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Commentaire :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 355);
+            this.button1.Location = new System.Drawing.Point(7, 437);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
             this.button1.Text = "Valider";
             this.button1.UseVisualStyleBackColor = true;
@@ -121,52 +125,59 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCommentaire);
-            this.groupBox1.Location = new System.Drawing.Point(421, 21);
+            this.groupBox1.Location = new System.Drawing.Point(561, 26);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(678, 384);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(904, 473);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Evaluer";
             // 
             // txtBonusMalus
             // 
-            this.txtBonusMalus.Location = new System.Drawing.Point(129, 322);
+            this.txtBonusMalus.Location = new System.Drawing.Point(172, 396);
+            this.txtBonusMalus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBonusMalus.Name = "txtBonusMalus";
-            this.txtBonusMalus.Size = new System.Drawing.Size(100, 20);
+            this.txtBonusMalus.Size = new System.Drawing.Size(132, 22);
             this.txtBonusMalus.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 325);
+            this.label4.Location = new System.Drawing.Point(8, 400);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 13);
+            this.label4.Size = new System.Drawing.Size(160, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Bonus/Malus (-10/+10) :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(427, 422);
+            this.label2.Location = new System.Drawing.Point(569, 519);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Note Finale :";
             // 
             // libNote
             // 
             this.libNote.AutoSize = true;
-            this.libNote.Location = new System.Drawing.Point(499, 422);
+            this.libNote.Location = new System.Drawing.Point(665, 519);
+            this.libNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.libNote.Name = "libNote";
-            this.libNote.Size = new System.Drawing.Size(28, 13);
+            this.libNote.Size = new System.Drawing.Size(36, 17);
             this.libNote.TabIndex = 6;
             this.libNote.Text = "note";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(427, 449);
+            this.button2.Location = new System.Drawing.Point(569, 553);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 23);
+            this.button2.Size = new System.Drawing.Size(99, 28);
             this.button2.TabIndex = 7;
             this.button2.Text = "PDF";
             this.button2.UseVisualStyleBackColor = true;
@@ -175,11 +186,11 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.listeOffres);
-            this.groupBox4.Location = new System.Drawing.Point(23, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Location = new System.Drawing.Point(31, 39);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(169, 374);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox4.Size = new System.Drawing.Size(225, 460);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Offres";
@@ -187,21 +198,22 @@
             // listeOffres
             // 
             this.listeOffres.FormattingEnabled = true;
-            this.listeOffres.Location = new System.Drawing.Point(14, 17);
-            this.listeOffres.Margin = new System.Windows.Forms.Padding(2);
+            this.listeOffres.ItemHeight = 16;
+            this.listeOffres.Location = new System.Drawing.Point(19, 21);
+            this.listeOffres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listeOffres.Name = "listeOffres";
-            this.listeOffres.Size = new System.Drawing.Size(134, 342);
+            this.listeOffres.Size = new System.Drawing.Size(177, 420);
             this.listeOffres.TabIndex = 8;
             this.listeOffres.SelectedIndexChanged += new System.EventHandler(this.listeOffres_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listeCandidats);
-            this.groupBox2.Location = new System.Drawing.Point(225, 32);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(300, 39);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(169, 374);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(225, 460);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Candidats";
@@ -209,17 +221,19 @@
             // listeCandidats
             // 
             this.listeCandidats.FormattingEnabled = true;
-            this.listeCandidats.Location = new System.Drawing.Point(20, 17);
-            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2);
+            this.listeCandidats.ItemHeight = 16;
+            this.listeCandidats.Location = new System.Drawing.Point(27, 21);
+            this.listeCandidats.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listeCandidats.Name = "listeCandidats";
-            this.listeCandidats.Size = new System.Drawing.Size(134, 342);
+            this.listeCandidats.Size = new System.Drawing.Size(177, 420);
             this.listeCandidats.TabIndex = 8;
             // 
             // bttnReunion
             // 
-            this.bttnReunion.Location = new System.Drawing.Point(638, 422);
+            this.bttnReunion.Location = new System.Drawing.Point(851, 519);
+            this.bttnReunion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bttnReunion.Name = "bttnReunion";
-            this.bttnReunion.Size = new System.Drawing.Size(100, 49);
+            this.bttnReunion.Size = new System.Drawing.Size(133, 60);
             this.bttnReunion.TabIndex = 12;
             this.bttnReunion.Text = "réunion";
             this.bttnReunion.UseVisualStyleBackColor = true;
@@ -227,9 +241,9 @@
             // 
             // EvaluationRH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 496);
+            this.ClientSize = new System.Drawing.Size(1492, 610);
             this.Controls.Add(this.bttnReunion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
@@ -237,8 +251,10 @@
             this.Controls.Add(this.libNote);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EvaluationRH";
             this.Text = "Evaluation";
+            this.Load += new System.EventHandler(this.EvaluationRH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tableauEvaluation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

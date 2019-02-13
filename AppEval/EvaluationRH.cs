@@ -81,7 +81,6 @@ namespace AppEval
                 erreur = true;
                 MessageBox.Show("Vous devez saisir un bonus / malus !");
             }
-            libNote.Text = DAOEvaluation.GetNoteTot(idCand).ToString();
 
             //Recuperation idCand à partir de la listBox des candidature
             string value = listeCandidats.SelectedItem.ToString();
@@ -104,6 +103,7 @@ namespace AppEval
             {
                 DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand);
             }
+            libNote.Text = DAOEvaluation.GetNoteTot(idCand).ToString();
         }
 
         private void listeOffres_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,6 +151,11 @@ namespace AppEval
             this.Hide();
             TableauBord c = new TableauBord(idOffre);
             c.Show();
+        }
+
+        private void EvaluationRH_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
