@@ -13,8 +13,12 @@ namespace AppEval
 {
     public partial class TableauBord : Form
     {
-        public TableauBord(int idOffre)
+        int idOffre;
+        string nomRH;
+        public TableauBord(int idOffre, string unNomRH)
         {
+            this.idOffre = idOffre;
+            this.nomRH = unNomRH;
             InitializeComponent();
             NpgsqlConnection conn = new NpgsqlConnection(Connexion.Connecter());
             conn.Open();
@@ -91,6 +95,8 @@ namespace AppEval
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+            EvaluationRH eval = new EvaluationRH(nomRH);
+            eval.Show();
            
         }
 
@@ -98,5 +104,7 @@ namespace AppEval
         {
             
         }
+
+
     }
 }

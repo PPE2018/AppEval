@@ -10,7 +10,12 @@ namespace AppEval
     {
         public static string Connecter()
         {
-            return "Host=localhost;Username=postgres;Password=postgres;Database=BddAppEval";
+            return "Host=localhost;Username=postgres;Password=;Database=BddAppEval";
+        }
+
+        public static string ConnectOdoo()
+        {
+            return "Host=localhost;Port=4545;Username=openpg;Password=openpgpwd;Database=ekara2";
         }
     }
 }

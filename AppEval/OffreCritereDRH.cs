@@ -13,8 +13,10 @@ namespace AppEval
     public partial class OffreCritereDRH : Form
     {
         int idOffre;
-        public OffreCritereDRH()
+        string nomRH;
+        public OffreCritereDRH(string unNomRH)
         {
+            this.nomRH = unNomRH;
             InitializeComponent();
 
             //Pour afficher les offres au commencement de l'appli
@@ -125,7 +127,7 @@ namespace AppEval
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EvaluationRH evaluation = new EvaluationRH();
+            EvaluationRH evaluation = new EvaluationRH(this.nomRH);
             evaluation.Show();
         }
     }

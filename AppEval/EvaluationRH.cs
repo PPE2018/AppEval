@@ -14,8 +14,10 @@ namespace AppEval
     {
         int idOffre;
         int idCand;
-        public EvaluationRH()
+        string nomRH;
+        public EvaluationRH(string unNomRH)
         {
+            this.nomRH = unNomRH;
             InitializeComponent();
             
             foreach (Offre o in DAOOffre.GetLesOffres())
@@ -81,6 +83,7 @@ namespace AppEval
                 erreur = true;
                 MessageBox.Show("Vous devez saisir un bonus / malus !");
             }
+            libNote.Text = DAOEvaluation.GetNoteTot(DAOEvaluation.GetIdLastEval()).ToString();
 
             //Recuperation idCand à partir de la listBox des candidature
             string value = listeCandidats.SelectedItem.ToString();
@@ -101,9 +104,8 @@ namespace AppEval
 
             if (!erreur)
             {
-                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand);
+                DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand, nomRH);
             }
-            libNote.Text = DAOEvaluation.GetNoteTot(idCand).ToString();
         }
 
         private void listeOffres_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,7 +151,7 @@ namespace AppEval
         private void bttnReunion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TableauBord c = new TableauBord(idOffre);
+            TableauBord c = new TableauBord(idOffre, nomRH);
             c.Show();
         }
 
