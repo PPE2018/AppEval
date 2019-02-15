@@ -67,9 +67,9 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT notetot + e.bonusmalus from noterh INNER JOIN evaluation e ON e.id_eval = noterh.id_eval WHERE e.id_eval = " + idEval, conn))
+                using (var cmd = new NpgsqlCommand("SELECT noteTotal FROM NoteRH  WHERE id_eval = " + idEval + " ORDER BY id_eval;", conn))
                 using (var reader = cmd.ExecuteReader())
-                    while (reader.Read())
+                while (reader.Read())
                     {
                         noteTot = reader.GetInt32(0);
                     }

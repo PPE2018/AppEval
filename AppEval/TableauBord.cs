@@ -22,14 +22,14 @@ namespace AppEval
             InitializeComponent();
             NpgsqlConnection conn = new NpgsqlConnection(Connexion.Connecter());
             conn.Open();
-            using (NpgsqlCommand cmd = new NpgsqlCommand("CREATE OR REPLACE VIEW NoteRH AS SELECT e.nom_prenom_rh, c.nom_cand, c.prenom_cand, (SUM(CAST(n.note AS int) * a.coefficient + e.bonusmalus)) AS noteTotal FROM candidature c INNER JOIN evaluation e ON c.id_cand = e.id_cand INNER JOIN noter n ON n.id_eval = e.id_eval INNER JOIN critere cr ON cr.id_critere = n.id_critere INNER JOIN associer a ON cr.id_critere = a.id_critere WHERE a.id_offre = "+idOffre+" GROUP BY e.nom_prenom_rh, c.nom_cand, c.prenom_cand, e.bonusmalus; ", conn))
-            {
-                cmd.ExecuteNonQuery();
-            }
-            using (NpgsqlCommand cmd1 = new NpgsqlCommand("CREATE OR REPLACE VIEW NoteMoy AS SELECT C.nom_cand, C.prenom_cand, C.id_cand, ROUND(AVG(N.noteTotal), 2) AS notemoyenne FROM CANDIDATURE C INNER JOIN NOTERH N ON C.nom_cand = N.nom_cand GROUP BY C.id_cand, C.nom_cand, C.prenom_cand; ", conn))
-            {
-                cmd1.ExecuteNonQuery();
-            }
+            //using (NpgsqlCommand cmd = new NpgsqlCommand("CREATE OR REPLACE VIEW NoteRH AS SELECT e.nom_prenom_rh, c.nom_cand, c.prenom_cand, (SUM(CAST(n.note AS int) * a.coefficient + e.bonusmalus)) AS noteTotal FROM candidature c INNER JOIN evaluation e ON c.id_cand = e.id_cand INNER JOIN noter n ON n.id_eval = e.id_eval INNER JOIN critere cr ON cr.id_critere = n.id_critere INNER JOIN associer a ON cr.id_critere = a.id_critere WHERE a.id_offre = "+idOffre+" GROUP BY e.nom_prenom_rh, c.nom_cand, c.prenom_cand, e.bonusmalus; ", conn))
+            //{
+            //    cmd.ExecuteNonQuery();
+            //}
+            //using (NpgsqlCommand cmd1 = new NpgsqlCommand("CREATE OR REPLACE VIEW NoteMoy AS SELECT C.nom_cand, C.prenom_cand, C.id_cand, ROUND(AVG(N.noteTotal), 2) AS notemoyenne FROM CANDIDATURE C INNER JOIN NOTERH N ON C.nom_cand = N.nom_cand GROUP BY C.id_cand, C.nom_cand, C.prenom_cand; ", conn))
+            //{
+            //    cmd1.ExecuteNonQuery();
+            //}
 
             using (NpgsqlCommand cmd2 = new NpgsqlCommand("SELECT N.nom_cand, N.prenom_cand, M.notemoyenne,N.noteTotal, N.nom_prenom_rh FROM NoteRH N INNER JOIN NoteMoy M ON M.nom_cand = N.nom_cand AND M.prenom_cand = N.prenom_cand ORDER BY  M.notemoyenne, N.nom_cand, N.prenom_cand ; ", conn))
             using (NpgsqlDataReader reader = cmd2.ExecuteReader())
