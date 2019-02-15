@@ -143,7 +143,7 @@ namespace AppEval
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
-                        e = new Evaluation(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetString(4));
+                        e = new Evaluation(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(2), reader.GetInt32(3), reader.GetString(4), GetNoteTot(reader.GetInt32(0)));
                         lesEvaluations.Add(e);
                     }
                 conn.Close();

@@ -105,11 +105,15 @@ namespace AppEval
             {
                 DAOEvaluation.AjouterEvaluation(libelleNote, commentaire, bonusMalus, idCand, nomRH);
                 libNote.Text = DAOEvaluation.GetNoteTot(DAOEvaluation.GetIdLastEval()).ToString();
+                libNote.Show();
             }
         }
 
         private void listeOffres_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtCommentaire.Clear();
+            libNote.Hide();
+            txtBonusMalus.Clear();
             string value = listeOffres.SelectedItem.ToString();
             string id = "";
             bool stop = false;
