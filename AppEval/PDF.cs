@@ -75,7 +75,7 @@ namespace AppEval
             foreach (Evaluation e in lesEvaluations)
             {
                 table.AddCell(e.GetNomPrenomRH());
-
+                table.AddCell(e.GetNote().ToString());
                 table.AddCell(e.GetCommentaire());
             }
             Paragraph monParaph1 = new Paragraph();
