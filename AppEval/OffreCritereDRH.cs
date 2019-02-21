@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AppEval.ServiceReference1;
+using System.Xml;
 namespace AppEval
 {
     public partial class OffreCritereDRH : Form
@@ -18,6 +19,26 @@ namespace AppEval
         {
             this.nomRH = unNomRH;
             InitializeComponent();
+
+            sioservicePortClient webServive = new sioservicePortClient();
+            string web = webServive.exportOffreList("1");
+            XmlDocument doc1 = new XmlDocument();
+            doc1.LoadXml(web);
+
+            XmlNodeList id = doc1.GetElementsByTagName("id");
+            XmlNodeList libelle = doc1.GetElementsByTagName("libelle");
+            XmlNodeList description = doc1.GetElementsByTagName("description");
+            XmlNodeList lieu = doc1.GetElementsByTagName("lieu");
+            XmlNodeList type_contrat = doc1.GetElementsByTagName("type_contrat");
+            XmlNodeList salaire = doc1.GetElementsByTagName("salaire");
+            XmlNodeList date_limite = doc1.GetElementsByTagName("date_limite");
+            XmlNodeList video = doc1.GetElementsByTagName("video");
+            XmlNodeList supprimer = doc1.GetElementsByTagName("supprimer");
+
+
+
+
+
 
             //Pour afficher les offres au commencement de l'appli
 
@@ -129,6 +150,11 @@ namespace AppEval
         {
             EvaluationRH evaluation = new EvaluationRH(this.nomRH);
             evaluation.Show();
+        }
+
+        private void OffreCritereDRH_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
