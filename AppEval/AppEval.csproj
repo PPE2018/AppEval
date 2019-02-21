@@ -83,12 +83,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connexion.cs" />
-    <Compile Include="ConnexionRH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConnexionRH.Designer.cs">
-      <DependentUpon>ConnexionRH.cs</DependentUpon>
-    </Compile>
     <Compile Include="Critere.cs" />
     <Compile Include="DAOEvaluation.cs" />
     <Compile Include="DAOAssocier.cs" />
@@ -124,9 +118,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Authentification.resx">
       <DependentUpon>Authentification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConnexionRH.resx">
-      <DependentUpon>ConnexionRH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EvaluationRH.resx">
       <DependentUpon>EvaluationRH.cs</DependentUpon>

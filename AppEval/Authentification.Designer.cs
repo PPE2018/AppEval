@@ -71,6 +71,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Authentification";
             this.Text = "Authentification";
+            this.Load += new System.EventHandler(this.Authentification_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

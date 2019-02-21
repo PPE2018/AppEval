@@ -15,7 +15,7 @@ namespace AppEval
 
         public static string ConnectOdoo()
         {
-            return "Host=localhost;Port=8069;Username=openpg;Password=openpgpwd;Database=ppe";
+            return "Host=localhost;Port=4747;Username=openpg;Password=;Database=ppe2";
         }
     }
 }

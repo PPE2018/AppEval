@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppEval.ServiceReference1;
 using System.Xml;
+using Npgsql;
 namespace AppEval
 {
     public partial class OffreCritereDRH : Form
@@ -35,7 +36,51 @@ namespace AppEval
             XmlNodeList video = doc1.GetElementsByTagName("video");
             XmlNodeList supprimer = doc1.GetElementsByTagName("supprimer");
 
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
 
+                for (int i = 0; i < id.Count; i++)
+                {
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "INSERT INTO OFFRE_EMPLOIS (id_offre, libelle, description, lieu, type_contrat, salaire, date_limite, video, supprimer, date_limite_offre ) VALUES ("+ id[i].InnerXml+",'"+libelle[i].InnerXml+"', '"+description[i].InnerXml+"','"+lieu[i].InnerXml+"','"+type_contrat[i].InnerXml+"','"+salaire[i].InnerXml+"', '"+date_limite[i].InnerXml+"', '"+video[i].InnerXml+"','"+supprimer[i].InnerXml+"', NOW())";
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                conn.Close();
+
+            }
+
+            XmlDocument doc2 = new XmlDocument();
+            doc2.LoadXml(web);
+
+            XmlNodeList id_cand = doc2.GetElementsByTagName("id_candidature");
+            XmlNodeList nom_cand = doc2.GetElementsByTagName("nom");
+            XmlNodeList prenom_cand = doc2.GetElementsByTagName("prenom");
+            XmlNodeList date_cand = doc2.GetElementsByTagName("date_candidature");
+            XmlNodeList reception = doc2.GetElementsByTagName("reception");
+            XmlNodeList statut_cand = doc2.GetElementsByTagName("statut_cand");
+            XmlNodeList id_offre = doc2.GetElementsByTagName("id_offre");
+
+
+            using (var conn = new NpgsqlConnection(Connexion.Connecter()))
+            {
+                conn.Open();
+
+                for (int i = 0; i < id_cand.Count; i++)
+                {
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "INSERT INTO CANDIDATURE (id_cand, nom_cand, prenom_cand, date_cand, reception , statut_cand, id_offre ) VALUES (" + id_cand[i].InnerXml + ",'" + nom_cand[i].InnerXml + "', '" + prenom_cand[i].InnerXml + "','" + date_cand[i].InnerXml + "','" + reception[i].InnerXml + "','Attente','" + id_offre[i].InnerXml + "')";
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                conn.Close();
+
+            }
 
 
 

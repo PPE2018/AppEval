@@ -135,7 +135,9 @@ namespace AppEval
             {
                 listeCandidats.Items.Add(candidature.GetIdCand().ToString() + "-" + candidature.GetNom() + candidature.GetPrenom());
             }
-            listeCandidats.SelectedIndex = 0;
+
+            //beuge à modifier
+            //listeCandidats.SelectedIndex = 0;
         }
 
         private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
