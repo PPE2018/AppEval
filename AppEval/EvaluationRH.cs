@@ -165,5 +165,10 @@ namespace AppEval
         {
 
         }
+
+        private void listeCandidats_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
