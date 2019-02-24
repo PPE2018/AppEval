@@ -21,6 +21,7 @@ namespace AppEval
             this.nomRH = unNomRH;
             InitializeComponent();
 
+            //permet de ne pas supprimer à chaque fois les offres dans la bdd
             string id = "-1";
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
@@ -37,6 +38,7 @@ namespace AppEval
 
             }
 
+            //Ouverture du web sercive  et créattion du document xml
             sioservicePortClient webServive = new sioservicePortClient();
             string web = webServive.exportOffreList(id);
             XmlDocument doc1 = new XmlDocument();
@@ -52,6 +54,7 @@ namespace AppEval
             XmlNodeList video = doc1.GetElementsByTagName("video");
             XmlNodeList supprimer = doc1.GetElementsByTagName("supprimer");
 
+            //permet d'insérer les données qui se trouvent dans le xml dans la bdd posgres
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
@@ -61,6 +64,7 @@ namespace AppEval
                     using (var cmd = new NpgsqlCommand())
                     {
                         cmd.Connection = conn;
+                        //innerXML permet d'enlever les balises
                         cmd.CommandText = "INSERT INTO OFFRE_EMPLOIS (id_offre, libelle, description, lieu, type_contrat, salaire, date_limite, video, supprimer, date_limite_offre ) VALUES ("+ id_offre[i].InnerXml+",'"+libelle[i].InnerXml+"', '"+description[i].InnerXml+"','"+lieu[i].InnerXml+"','"+type_contrat[i].InnerXml+"','"+salaire[i].InnerXml+"', '"+date_limite[i].InnerXml+"', '"+video[i].InnerXml+"','"+supprimer[i].InnerXml+"', NOW())";
                         cmd.ExecuteNonQuery();
                     }
@@ -79,7 +83,7 @@ namespace AppEval
             XmlNodeList date_candidature = doc2.GetElementsByTagName("date_candidature");
             XmlNodeList id_offre_candidature = doc2.GetElementsByTagName("id_offre_candidature");
 
-
+            //permet d'insérer les données xml dans la bdd posgres
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
@@ -96,9 +100,6 @@ namespace AppEval
                 conn.Close();
 
             }
-
-
-
 
             //Pour afficher les offres au commencement de l'appli
 
@@ -118,6 +119,7 @@ namespace AppEval
 
         private void bttnSupprimer_Click(object sender, EventArgs e)
         {
+            //on récupère l'index de l'offre
             int index = this.OffreCritere.CurrentRow.Index;
 
             DAOCritere.SupprimerCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(),listBoxOffre.SelectedIndex+1);
@@ -182,6 +184,18 @@ namespace AppEval
 
         private void buttonModifierCritere_Click(object sender, EventArgs e)
         {
+            
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EvaluationRH evaluation = new EvaluationRH(this.nomRH);
+            evaluation.Show();
+        }
+
+        private void buttonModifierCritere_Click_1(object sender, EventArgs e)
+        {
             string coeffText = textBoxCoeff.Text;
             int coeff;
             if (coeffText != "")
@@ -203,18 +217,6 @@ namespace AppEval
             {
                 MessageBox.Show("Vous devez completer tout les champs !");
             }
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            EvaluationRH evaluation = new EvaluationRH(this.nomRH);
-            evaluation.Show();
-        }
-
-        private void OffreCritereDRH_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

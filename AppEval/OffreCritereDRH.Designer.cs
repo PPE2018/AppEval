@@ -69,10 +69,9 @@
             this.OffreCritere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OffreCritere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Critères});
-            this.OffreCritere.Location = new System.Drawing.Point(324, 97);
-            this.OffreCritere.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OffreCritere.Location = new System.Drawing.Point(243, 79);
             this.OffreCritere.Name = "OffreCritere";
-            this.OffreCritere.Size = new System.Drawing.Size(356, 421);
+            this.OffreCritere.Size = new System.Drawing.Size(267, 342);
             this.OffreCritere.TabIndex = 0;
             this.OffreCritere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OffreCritere_CellContentClick);
             // 
@@ -85,10 +84,9 @@
             // 
             // buttonAjouter
             // 
-            this.buttonAjouter.Location = new System.Drawing.Point(725, 134);
-            this.buttonAjouter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAjouter.Location = new System.Drawing.Point(544, 109);
             this.buttonAjouter.Name = "buttonAjouter";
-            this.buttonAjouter.Size = new System.Drawing.Size(131, 62);
+            this.buttonAjouter.Size = new System.Drawing.Size(98, 50);
             this.buttonAjouter.TabIndex = 2;
             this.buttonAjouter.Text = "Ajouter un critère";
             this.buttonAjouter.UseVisualStyleBackColor = true;
@@ -96,10 +94,9 @@
             // 
             // bttnSupprimer
             // 
-            this.bttnSupprimer.Location = new System.Drawing.Point(725, 318);
-            this.bttnSupprimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bttnSupprimer.Location = new System.Drawing.Point(544, 258);
             this.bttnSupprimer.Name = "bttnSupprimer";
-            this.bttnSupprimer.Size = new System.Drawing.Size(131, 57);
+            this.bttnSupprimer.Size = new System.Drawing.Size(98, 46);
             this.bttnSupprimer.TabIndex = 3;
             this.bttnSupprimer.Text = "Supprimer";
             this.bttnSupprimer.UseVisualStyleBackColor = true;
@@ -108,20 +105,17 @@
             // listBoxOffre
             // 
             this.listBoxOffre.FormattingEnabled = true;
-            this.listBoxOffre.ItemHeight = 16;
-            this.listBoxOffre.Location = new System.Drawing.Point(12, 97);
-            this.listBoxOffre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxOffre.Location = new System.Drawing.Point(9, 79);
             this.listBoxOffre.Name = "listBoxOffre";
-            this.listBoxOffre.Size = new System.Drawing.Size(221, 420);
+            this.listBoxOffre.Size = new System.Drawing.Size(167, 342);
             this.listBoxOffre.TabIndex = 4;
             this.listBoxOffre.SelectedIndexChanged += new System.EventHandler(this.listBoxOffre_SelectedIndexChanged);
             // 
             // dateTimePickeDateLimite
             // 
-            this.dateTimePickeDateLimite.Location = new System.Drawing.Point(45, 86);
-            this.dateTimePickeDateLimite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePickeDateLimite.Location = new System.Drawing.Point(34, 70);
             this.dateTimePickeDateLimite.Name = "dateTimePickeDateLimite";
-            this.dateTimePickeDateLimite.Size = new System.Drawing.Size(177, 22);
+            this.dateTimePickeDateLimite.Size = new System.Drawing.Size(134, 20);
             this.dateTimePickeDateLimite.TabIndex = 5;
             // 
             // groupBoxCritere
@@ -133,21 +127,18 @@
             this.groupBoxCritere.Controls.Add(this.listBoxOffre);
             this.groupBoxCritere.Controls.Add(this.buttonAjouter);
             this.groupBoxCritere.Controls.Add(this.OffreCritere);
-            this.groupBoxCritere.Location = new System.Drawing.Point(16, 27);
-            this.groupBoxCritere.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxCritere.Location = new System.Drawing.Point(12, 22);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxCritere.Size = new System.Drawing.Size(883, 543);
+            this.groupBoxCritere.Size = new System.Drawing.Size(662, 441);
             this.groupBoxCritere.TabIndex = 6;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
             // 
             // buttonAjouterDate
             // 
-            this.buttonAjouterDate.Location = new System.Drawing.Point(725, 401);
-            this.buttonAjouterDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAjouterDate.Location = new System.Drawing.Point(544, 326);
             this.buttonAjouterDate.Name = "buttonAjouterDate";
-            this.buttonAjouterDate.Size = new System.Drawing.Size(131, 57);
+            this.buttonAjouterDate.Size = new System.Drawing.Size(98, 46);
             this.buttonAjouterDate.TabIndex = 7;
             this.buttonAjouterDate.Text = "Ajouter une date ";
             this.buttonAjouterDate.UseVisualStyleBackColor = true;
@@ -156,19 +147,17 @@
             // labelOfres
             // 
             this.labelOfres.AutoSize = true;
-            this.labelOfres.Location = new System.Drawing.Point(8, 57);
-            this.labelOfres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelOfres.Location = new System.Drawing.Point(6, 46);
             this.labelOfres.Name = "labelOfres";
-            this.labelOfres.Size = new System.Drawing.Size(55, 17);
+            this.labelOfres.Size = new System.Drawing.Size(41, 13);
             this.labelOfres.TabIndex = 6;
             this.labelOfres.Text = "Offres :";
             // 
             // buttonModifier
             // 
-            this.buttonModifier.Location = new System.Drawing.Point(725, 230);
-            this.buttonModifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonModifier.Location = new System.Drawing.Point(544, 187);
             this.buttonModifier.Name = "buttonModifier";
-            this.buttonModifier.Size = new System.Drawing.Size(131, 57);
+            this.buttonModifier.Size = new System.Drawing.Size(98, 46);
             this.buttonModifier.TabIndex = 4;
             this.buttonModifier.Text = "Modifier";
             this.buttonModifier.UseVisualStyleBackColor = true;
@@ -177,10 +166,9 @@
             // labelDateLimite
             // 
             this.labelDateLimite.AutoSize = true;
-            this.labelDateLimite.Location = new System.Drawing.Point(91, 44);
-            this.labelDateLimite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateLimite.Location = new System.Drawing.Point(68, 36);
             this.labelDateLimite.Name = "labelDateLimite";
-            this.labelDateLimite.Size = new System.Drawing.Size(87, 17);
+            this.labelDateLimite.Size = new System.Drawing.Size(66, 13);
             this.labelDateLimite.TabIndex = 7;
             this.labelDateLimite.Text = "Date Limite :";
             // 
@@ -190,11 +178,9 @@
             this.groupBoxDate.Controls.Add(this.buttonValider);
             this.groupBoxDate.Controls.Add(this.labelDateLimite);
             this.groupBoxDate.Controls.Add(this.dateTimePickeDateLimite);
-            this.groupBoxDate.Location = new System.Drawing.Point(907, 27);
-            this.groupBoxDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDate.Location = new System.Drawing.Point(680, 22);
             this.groupBoxDate.Name = "groupBoxDate";
-            this.groupBoxDate.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxDate.Size = new System.Drawing.Size(277, 196);
+            this.groupBoxDate.Size = new System.Drawing.Size(208, 159);
             this.groupBoxDate.TabIndex = 8;
             this.groupBoxDate.TabStop = false;
             this.groupBoxDate.Text = "Date :";
@@ -208,11 +194,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCoeff);
             this.groupBox1.Controls.Add(this.txtNom);
-            this.groupBox1.Location = new System.Drawing.Point(0, 267);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(0, 217);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(277, 176);
+            this.groupBox1.Size = new System.Drawing.Size(208, 143);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ajouter un Critère";
@@ -220,10 +204,9 @@
             // Valider
             // 
             this.Valider.AutoSize = true;
-            this.Valider.Location = new System.Drawing.Point(80, 143);
-            this.Valider.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Valider.Location = new System.Drawing.Point(60, 116);
             this.Valider.Name = "Valider";
-            this.Valider.Size = new System.Drawing.Size(65, 17);
+            this.Valider.Size = new System.Drawing.Size(50, 13);
             this.Valider.TabIndex = 7;
             this.Valider.Text = "Message";
             this.Valider.Visible = false;
@@ -231,19 +214,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 52);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(155, 137);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(116, 111);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Ajouter";
             this.button1.UseVisualStyleBackColor = true;
@@ -251,28 +232,34 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 97);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Coefficient :";
             // 
             // txtCoeff
             // 
-            this.txtCoeff.Location = new System.Drawing.Point(121, 94);
-            this.txtCoeff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCoeff.Location = new System.Drawing.Point(91, 76);
             this.txtCoeff.Name = "txtCoeff";
-            this.txtCoeff.Size = new System.Drawing.Size(132, 22);
+            this.txtCoeff.Size = new System.Drawing.Size(100, 20);
             this.txtCoeff.TabIndex = 4;
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(121, 48);
-            this.txtNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNom.Location = new System.Drawing.Point(91, 39);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(132, 22);
+            this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 3;
+            // 
+            // buttonValider
+            // 
+            this.buttonValider.Location = new System.Drawing.Point(63, 120);
+            this.buttonValider.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(84, 29);
+            this.buttonValider.TabIndex = 10;
+            this.buttonValider.Text = "Valider Date";
             // 
             // groupBoxModifierCritere
             // 
@@ -281,64 +268,66 @@
             this.groupBoxModifierCritere.Controls.Add(this.label5);
             this.groupBoxModifierCritere.Controls.Add(this.textBoxCoeff);
             this.groupBoxModifierCritere.Controls.Add(this.textBoxNom);
-            this.groupBoxModifierCritere.Location = new System.Drawing.Point(907, 318);
-            this.groupBoxModifierCritere.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxModifierCritere.Location = new System.Drawing.Point(680, 258);
             this.groupBoxModifierCritere.Name = "groupBoxModifierCritere";
-            this.groupBoxModifierCritere.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxModifierCritere.Size = new System.Drawing.Size(277, 176);
+            this.groupBoxModifierCritere.Size = new System.Drawing.Size(208, 143);
             this.groupBoxModifierCritere.TabIndex = 9;
             this.groupBoxModifierCritere.TabStop = false;
             this.groupBoxModifierCritere.Text = "Modifier Critère";
             this.groupBoxModifierCritere.Visible = false;
             // 
+            // buttonModifierCritere
+            // 
+            this.buttonModifierCritere.Location = new System.Drawing.Point(63, 117);
+            this.buttonModifierCritere.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonModifierCritere.Name = "buttonModifierCritere";
+            this.buttonModifierCritere.Size = new System.Drawing.Size(105, 19);
+            this.buttonModifierCritere.TabIndex = 0;
+            this.buttonModifierCritere.Text = "Modifier Critère";
+            this.buttonModifierCritere.Click += new System.EventHandler(this.buttonModifierCritere_Click_1);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 52);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(8, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Nom :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 97);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(8, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
+            this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Coefficient :";
             // 
             // textBoxCoeff
             // 
-            this.textBoxCoeff.Location = new System.Drawing.Point(121, 94);
-            this.textBoxCoeff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCoeff.Location = new System.Drawing.Point(91, 76);
             this.textBoxCoeff.Name = "textBoxCoeff";
-            this.textBoxCoeff.Size = new System.Drawing.Size(132, 22);
+            this.textBoxCoeff.Size = new System.Drawing.Size(100, 20);
             this.textBoxCoeff.TabIndex = 4;
             // 
             // textBoxNom
             // 
-            this.textBoxNom.Location = new System.Drawing.Point(121, 48);
-            this.textBoxNom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNom.Location = new System.Drawing.Point(91, 39);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(132, 22);
+            this.textBoxNom.Size = new System.Drawing.Size(100, 20);
             this.textBoxNom.TabIndex = 3;
             // 
             // OffreCritereDRH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 619);
+            this.ClientSize = new System.Drawing.Size(900, 503);
             this.Controls.Add(this.groupBoxModifierCritere);
             this.Controls.Add(this.groupBoxDate);
             this.Controls.Add(this.groupBoxCritere);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "OffreCritereDRH";
             this.Text = "OffreDRH";
-            this.Load += new System.EventHandler(this.OffreCritereDRH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).EndInit();
             this.groupBoxCritere.ResumeLayout(false);
             this.groupBoxCritere.PerformLayout();
