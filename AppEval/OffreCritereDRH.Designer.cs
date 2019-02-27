@@ -35,6 +35,7 @@
             this.listBoxOffre = new System.Windows.Forms.ListBox();
             this.dateTimePickeDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
+            this.listBoxOffreID = new System.Windows.Forms.ListBox();
             this.buttonAjouterDate = new System.Windows.Forms.Button();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.OffreCritere.Name = "OffreCritere";
             this.OffreCritere.Size = new System.Drawing.Size(267, 342);
             this.OffreCritere.TabIndex = 0;
-            this.OffreCritere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OffreCritere_CellContentClick);
             // 
             // Critères
             // 
@@ -120,6 +120,7 @@
             // 
             // groupBoxCritere
             // 
+            this.groupBoxCritere.Controls.Add(this.listBoxOffreID);
             this.groupBoxCritere.Controls.Add(this.buttonAjouterDate);
             this.groupBoxCritere.Controls.Add(this.labelOfres);
             this.groupBoxCritere.Controls.Add(this.buttonModifier);
@@ -129,10 +130,19 @@
             this.groupBoxCritere.Controls.Add(this.OffreCritere);
             this.groupBoxCritere.Location = new System.Drawing.Point(12, 22);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(662, 441);
+            this.groupBoxCritere.Size = new System.Drawing.Size(662, 610);
             this.groupBoxCritere.TabIndex = 6;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
+            // 
+            // listBoxOffreID
+            // 
+            this.listBoxOffreID.FormattingEnabled = true;
+            this.listBoxOffreID.Location = new System.Drawing.Point(14, 444);
+            this.listBoxOffreID.Name = "listBoxOffreID";
+            this.listBoxOffreID.Size = new System.Drawing.Size(176, 108);
+            this.listBoxOffreID.TabIndex = 8;
+            this.listBoxOffreID.Visible = false;
             // 
             // buttonAjouterDate
             // 
@@ -260,6 +270,7 @@
             this.buttonValider.Size = new System.Drawing.Size(84, 29);
             this.buttonValider.TabIndex = 10;
             this.buttonValider.Text = "Valider Date";
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click_1);
             // 
             // groupBoxModifierCritere
             // 
@@ -322,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 503);
+            this.ClientSize = new System.Drawing.Size(900, 644);
             this.Controls.Add(this.groupBoxModifierCritere);
             this.Controls.Add(this.groupBoxDate);
             this.Controls.Add(this.groupBoxCritere);
@@ -370,5 +381,6 @@
         private System.Windows.Forms.TextBox textBoxCoeff;
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.Button buttonModifierCritere;
+        private System.Windows.Forms.ListBox listBoxOffreID;
     }
 }

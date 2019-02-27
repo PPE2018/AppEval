@@ -60,7 +60,7 @@ namespace AppEval
                 }
 
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT (id_offre) FROM associer WHERE id_critere=" + idC + ";", conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT (id_critere) FROM associer WHERE id_critere=" + idC + ";", conn))
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -71,14 +71,14 @@ namespace AppEval
 
                 NpgsqlCommand cmd1 = new NpgsqlCommand("DELETE FROM associer WHERE id_critere = " + idC + " AND id_offre=" + unIdOffre,conn);
                 cmd1.ExecuteNonQuery();
-
                 if (association == 1)
                 {
-                    NpgsqlCommand cmd2 = new NpgsqlCommand("DELETE FROM critere WHERE id_critere = " + idC, conn);
-                    cmd2.ExecuteNonQuery();
+                    
                     NpgsqlCommand cmd3 = new NpgsqlCommand("DELETE FROM noter WHERE id_critere=" + idC, conn);
                     cmd3.ExecuteNonQuery();
-                    
+                    NpgsqlCommand cmd2 = new NpgsqlCommand("DELETE FROM critere WHERE id_critere = " + idC, conn);
+                    cmd2.ExecuteNonQuery();
+
 
                 }
                 else

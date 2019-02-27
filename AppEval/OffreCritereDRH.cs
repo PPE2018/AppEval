@@ -51,7 +51,6 @@ namespace AppEval
             XmlNodeList type_contrat = doc1.GetElementsByTagName("type_contrat");
             XmlNodeList salaire = doc1.GetElementsByTagName("salaire");
             XmlNodeList date_limite = doc1.GetElementsByTagName("date_limite");
-            XmlNodeList video = doc1.GetElementsByTagName("video");
             XmlNodeList supprimer = doc1.GetElementsByTagName("supprimer");
 
             //permet d'insérer les données qui se trouvent dans le xml dans la bdd posgres
@@ -65,7 +64,7 @@ namespace AppEval
                     {
                         cmd.Connection = conn;
                         //innerXML permet d'enlever les balises
-                        cmd.CommandText = "INSERT INTO OFFRE_EMPLOIS (id_offre, libelle, description, lieu, type_contrat, salaire, date_limite, video, supprimer, date_limite_offre ) VALUES ("+ id_offre[i].InnerXml+",'"+libelle[i].InnerXml+"', '"+description[i].InnerXml+"','"+lieu[i].InnerXml+"','"+type_contrat[i].InnerXml+"','"+salaire[i].InnerXml+"', '"+date_limite[i].InnerXml+"', '"+video[i].InnerXml+"','"+supprimer[i].InnerXml+"', NOW())";
+                        cmd.CommandText = "INSERT INTO OFFRE_EMPLOIS (id_offre, libelle, description, lieu, type_contrat, salaire, date_limite, supprimer, date_limite_offre ) VALUES ("+ id_offre[i].InnerXml+",'"+libelle[i].InnerXml+"', '"+description[i].InnerXml+"','"+lieu[i].InnerXml+"','"+type_contrat[i].InnerXml+"','"+salaire[i].InnerXml+"', '"+date_limite[i].InnerXml+"', '"+supprimer[i].InnerXml+"', NOW())";
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -106,6 +105,7 @@ namespace AppEval
             foreach (Offre o in DAOOffre.GetLesOffres())
             {
                 listBoxOffre.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle() + "-" + o.GetLieu());
+                listBoxOffreID.Items.Add(o.GetIdOffre());
             }
             listBoxOffre.SetSelected(0, true);
         }
@@ -122,7 +122,7 @@ namespace AppEval
             //on récupère l'index de l'offre
             int index = this.OffreCritere.CurrentRow.Index;
 
-            DAOCritere.SupprimerCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(),listBoxOffre.SelectedIndex+1);
+            DAOCritere.SupprimerCritere(OffreCritere.CurrentRow.Cells["Critères"].Value.ToString(), int.Parse(listBoxOffreID.Items[listBoxOffre.SelectedIndex].ToString()));
             
         }
 
@@ -160,26 +160,11 @@ namespace AppEval
             }
         }
 
-        private void OffreCritere_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonAjouterDate_Click(object sender, EventArgs e)
         {
             
             groupBoxDate.Visible= true;
             dateTimePickeDateLimite.Value= DAOOffre.GetDateLimite(idOffre);
-        }
-
-        private void buttonValider_Click(object sender, EventArgs e)
-        {
-            //Dès que le bouton est cliqué la groupe box ne s'affiche pas 
-            groupBoxDate.Visible = false;
-
-            //permet de modifier la date limite de l'offre
-            DAOOffre.ModifierDateLimite(idOffre, dateTimePickeDateLimite.Value);
-
         }
 
         private void buttonModifierCritere_Click(object sender, EventArgs e)
@@ -217,6 +202,15 @@ namespace AppEval
             {
                 MessageBox.Show("Vous devez completer tout les champs !");
             }
+        }
+
+        private void buttonValider_Click_1(object sender, EventArgs e)
+        {
+            //Dès que le bouton est cliqué la groupe box ne s'affiche pas 
+            groupBoxDate.Visible = false;
+
+            //permet de modifier la date limite de l'offre
+            DAOOffre.ModifierDateLimite(idOffre, dateTimePickeDateLimite.Value);
         }
     }
 }
