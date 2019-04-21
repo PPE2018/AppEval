@@ -41,6 +41,7 @@
             this.listeRH.Name = "listeRH";
             this.listeRH.Size = new System.Drawing.Size(164, 303);
             this.listeRH.TabIndex = 0;
+            this.listeRH.SelectedIndexChanged += new System.EventHandler(this.listeRH_SelectedIndexChanged);
             // 
             // groupBox1
             // 
