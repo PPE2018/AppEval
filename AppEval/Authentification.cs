@@ -36,5 +36,10 @@ namespace AppEval
             }
             this.Hide();
         }
+
+        private void Authentification_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

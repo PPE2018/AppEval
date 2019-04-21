@@ -113,7 +113,7 @@
             this.ClientSize = new System.Drawing.Size(233, 169);
             this.Controls.Add(this.groupBox1);
             this.Name = "AjoutCritere";
-            this.Text = "Form1";
+            this.Text = "AjouterCritère";
             this.Load += new System.EventHandler(this.AjoutCritere_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
