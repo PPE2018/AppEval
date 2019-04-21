@@ -25,6 +25,7 @@ namespace AppEval
                 listeOffres.Items.Add(o.GetIdOffre() + "-" + o.GetLibelle());
             }
             listeOffres.SelectedIndex = 0;
+            listeCandidats.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -141,7 +142,7 @@ namespace AppEval
             }
 
             //beuge à modifier
-            //listeCandidats.SelectedIndex = 0;
+            listeCandidats.SelectedIndex = 0;
         }
 
         private void tableauEvaluation_CellContentClick(object sender, DataGridViewCellEventArgs e)
