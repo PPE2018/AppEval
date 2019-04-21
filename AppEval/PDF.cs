@@ -23,12 +23,14 @@ namespace AppEval
             PdfContentByte cb = writer.DirectContent;
             cb.BeginText();
             BaseFont bf = BaseFont.CreateFont("C:\\WINDOWS\\FONTS\\ARIAL.TTF", BaseFont.CP1252, true);
-            
+            Paragraph p1 = new Paragraph();
+
             //on instancie une police Arial avec BaseFont 
             cb.SetFontAndSize(bf, 20f);
             cb.SetTextMatrix(100, 750);
             cb.ShowText("FICHE INDIVIDUELLE DE CANDIDATURE");
             cb.EndText();
+            
 
             cb.BeginText();
             cb.SetFontAndSize(bf, 17f);
@@ -67,7 +69,7 @@ namespace AppEval
             cell.Colspan = 3;
             table.SpacingBefore = 100;
             cell.HorizontalAlignment = 0; //0=Left, 1=Centre, 2=Right
-
+            
             table.AddCell(cell);
             table.AddCell("Evaluations");
             table.AddCell("Note");
