@@ -67,7 +67,7 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT noteTotal FROM NoteRH  WHERE id_eval = " + idEval + " ORDER BY id_eval;", conn))
+                using (var cmd = new NpgsqlCommand("SELECT noteTotal FROM NoteRH WHERE id_eval = " + idEval + " ORDER BY id_eval;", conn))
                 using (var reader = cmd.ExecuteReader())
                 while (reader.Read())
                     {
