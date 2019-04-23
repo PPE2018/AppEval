@@ -67,6 +67,7 @@
             this.tableauEvaluation.Name = "tableauEvaluation";
             this.tableauEvaluation.Size = new System.Drawing.Size(662, 185);
             this.tableauEvaluation.TabIndex = 0;
+            this.tableauEvaluation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableauEvaluation_CellContentClick_1);
             // 
             // Criteres
             // 
@@ -179,9 +180,9 @@
             // 
             this.groupBox4.Controls.Add(this.listeOffres);
             this.groupBox4.Location = new System.Drawing.Point(23, 32);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(169, 374);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
@@ -191,7 +192,7 @@
             // 
             this.listeOffres.FormattingEnabled = true;
             this.listeOffres.Location = new System.Drawing.Point(14, 17);
-            this.listeOffres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listeOffres.Margin = new System.Windows.Forms.Padding(2);
             this.listeOffres.Name = "listeOffres";
             this.listeOffres.Size = new System.Drawing.Size(134, 342);
             this.listeOffres.TabIndex = 8;
@@ -201,9 +202,9 @@
             // 
             this.groupBox2.Controls.Add(this.listeCandidats);
             this.groupBox2.Location = new System.Drawing.Point(225, 32);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(169, 374);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
@@ -213,7 +214,7 @@
             // 
             this.listeCandidats.FormattingEnabled = true;
             this.listeCandidats.Location = new System.Drawing.Point(20, 17);
-            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listeCandidats.Margin = new System.Windows.Forms.Padding(2);
             this.listeCandidats.Name = "listeCandidats";
             this.listeCandidats.Size = new System.Drawing.Size(134, 342);
             this.listeCandidats.TabIndex = 8;
@@ -236,9 +237,9 @@
             this.groupBox3.Controls.Add(this.libNote);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(421, 411);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(678, 108);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;

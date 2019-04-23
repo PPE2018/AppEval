@@ -171,5 +171,10 @@ namespace AppEval
         {
 
         }
+
+        private void tableauEvaluation_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
