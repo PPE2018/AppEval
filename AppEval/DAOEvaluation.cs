@@ -30,8 +30,9 @@ namespace AppEval
                 }
                 using (var cmd3 = new NpgsqlCommand())
                 {
-                    cmd3.Connection = conn;
-                    cmd3.CommandText = "INSERT INTO evaluation (id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, '"+ nomRH + "','" + DateTime.Now.ToShortDateString() + "','" + bonusMalus + "','" + commentaire + "','" + idCand +"')";
+                    cmd3.Connection = conn; 
+                    cmd3.CommandText = "INSERT INTO evaluation(id_eval, nom_prenom_rh, date_evaluation, bonusmalus, commentaire_eval, id_cand) VALUES (DEFAULT, '" + nomRH + "','" + DateTime.Now.ToShortDateString() + "','" + bonusMalus + "','" + commentaire + "','" + idCand + "')"; 
+                    
                     cmd3.ExecuteNonQuery();
                 }
 
