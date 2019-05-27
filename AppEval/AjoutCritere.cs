@@ -27,19 +27,12 @@ namespace AppEval
             int coeff;
             if (coeffText != "" && libelle != "")
             {
-                try
-                {
                     coeff = int.Parse(coeffText);
                     Critere unCritere = new Critere(libelle);
                     Associer uneAssociation = new Associer(coeff);                  
                     DAOCritere.AjoutCritere(unCritere, uneAssociation, idOffre);
                     Valider.Visible = true;
                     Valider.Text = "Envoyé !";
-                }
-                catch
-                {
-                    MessageBox.Show("Le coefficient doit être un numérique !");
-                }
             }
             else
             {

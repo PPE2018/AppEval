@@ -21,18 +21,20 @@ namespace AppEval
                     {
                         Offre uneOffre= new Offre(reader.GetInt32(0),reader.GetString(1), reader.GetString(2));
                         listOffres.Add(uneOffre);
+                        
                     }
                 conn.Close();
             }
             return listOffres;
         }
+
         public static DateTime GetDateLimite(int idOffre)
         {
             DateTime uneDate= new DateTime();
             using(var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT id_offre,date_limite FROM offre_emplois WHERE id_offre="+idOffre, conn))
+                using (var cmd = new NpgsqlCommand("SELECT id_offre,date_limite_offre  FROM offre_emplois WHERE id_offre="+idOffre, conn))
                 using (var reader = cmd.ExecuteReader())
                     while (reader.Read())
                     {
@@ -54,7 +56,7 @@ namespace AppEval
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "UPDATE offre_emplois SET date_limite='"+uneDate+"' WHERE id_offre="+idOffre;
+                    cmd.CommandText = "UPDATE offre_emplois SET date_limite_offre='"+uneDate+"' WHERE id_offre="+idOffre;
                     cmd.ExecuteNonQuery();
                 }
                 conn.Close();

@@ -13,14 +13,16 @@ namespace AppEval
         private DateTime dateEvaluation;
         private int bonusMalus;
         private string commentaireEval;
+        private double noteTot;
 
-        public Evaluation(int unIdEval, string unNomPrenomRh, DateTime uneDateEval, int unBonusMalus, string unCommentaire)
+        public Evaluation(int unIdEval, string unNomPrenomRh, DateTime uneDateEval, int unBonusMalus, string unCommentaire, double uneNotTot)
         {
             this.idEval = unIdEval;
             this.nomPrenomRh = unNomPrenomRh;
             this.dateEvaluation = uneDateEval;
             this.bonusMalus = unBonusMalus;
-            this.commentaireEval = unCommentaire; 
+            this.commentaireEval = unCommentaire;
+            this.noteTot = uneNotTot;
         }
 
         public string GetNomPrenomRH()
@@ -31,6 +33,11 @@ namespace AppEval
         public string GetCommentaire()
         {
             return this.commentaireEval;
+        }
+
+        public double GetNote()
+        {
+            return this.noteTot;
         }
     }
 }

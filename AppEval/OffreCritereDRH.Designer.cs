@@ -35,13 +35,12 @@
             this.listBoxOffre = new System.Windows.Forms.ListBox();
             this.dateTimePickeDateLimite = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCritere = new System.Windows.Forms.GroupBox();
+            this.listBoxOffreID = new System.Windows.Forms.ListBox();
             this.buttonAjouterDate = new System.Windows.Forms.Button();
             this.labelOfres = new System.Windows.Forms.Label();
             this.buttonModifier = new System.Windows.Forms.Button();
             this.labelDateLimite = new System.Windows.Forms.Label();
             this.groupBoxDate = new System.Windows.Forms.GroupBox();
-            this.buttonValider = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Valider = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,12 +48,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCoeff = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
+            this.buttonValider = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBoxModifierCritere = new System.Windows.Forms.GroupBox();
+            this.buttonModifierCritere = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxCoeff = new System.Windows.Forms.TextBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.buttonModifierCritere = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.OffreCritere)).BeginInit();
             this.groupBoxCritere.SuspendLayout();
             this.groupBoxDate.SuspendLayout();
@@ -73,7 +74,6 @@
             this.OffreCritere.Name = "OffreCritere";
             this.OffreCritere.Size = new System.Drawing.Size(267, 342);
             this.OffreCritere.TabIndex = 0;
-            this.OffreCritere.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OffreCritere_CellContentClick);
             // 
             // Critères
             // 
@@ -120,6 +120,7 @@
             // 
             // groupBoxCritere
             // 
+            this.groupBoxCritere.Controls.Add(this.listBoxOffreID);
             this.groupBoxCritere.Controls.Add(this.buttonAjouterDate);
             this.groupBoxCritere.Controls.Add(this.labelOfres);
             this.groupBoxCritere.Controls.Add(this.buttonModifier);
@@ -129,10 +130,19 @@
             this.groupBoxCritere.Controls.Add(this.OffreCritere);
             this.groupBoxCritere.Location = new System.Drawing.Point(12, 22);
             this.groupBoxCritere.Name = "groupBoxCritere";
-            this.groupBoxCritere.Size = new System.Drawing.Size(662, 441);
+            this.groupBoxCritere.Size = new System.Drawing.Size(662, 610);
             this.groupBoxCritere.TabIndex = 6;
             this.groupBoxCritere.TabStop = false;
             this.groupBoxCritere.Text = "Critères";
+            // 
+            // listBoxOffreID
+            // 
+            this.listBoxOffreID.FormattingEnabled = true;
+            this.listBoxOffreID.Location = new System.Drawing.Point(14, 444);
+            this.listBoxOffreID.Name = "listBoxOffreID";
+            this.listBoxOffreID.Size = new System.Drawing.Size(176, 108);
+            this.listBoxOffreID.TabIndex = 8;
+            this.listBoxOffreID.Visible = false;
             // 
             // buttonAjouterDate
             // 
@@ -185,16 +195,6 @@
             this.groupBoxDate.TabStop = false;
             this.groupBoxDate.Text = "Date :";
             this.groupBoxDate.Visible = false;
-            // 
-            // buttonValider
-            // 
-            this.buttonValider.Location = new System.Drawing.Point(60, 110);
-            this.buttonValider.Name = "buttonValider";
-            this.buttonValider.Size = new System.Drawing.Size(94, 27);
-            this.buttonValider.TabIndex = 8;
-            this.buttonValider.Text = "Valider";
-            this.buttonValider.UseVisualStyleBackColor = true;
-            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click);
             // 
             // groupBox1
             // 
@@ -262,6 +262,16 @@
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 3;
             // 
+            // buttonValider
+            // 
+            this.buttonValider.Location = new System.Drawing.Point(63, 120);
+            this.buttonValider.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonValider.Name = "buttonValider";
+            this.buttonValider.Size = new System.Drawing.Size(84, 29);
+            this.buttonValider.TabIndex = 10;
+            this.buttonValider.Text = "Valider Date";
+            this.buttonValider.Click += new System.EventHandler(this.buttonValider_Click_1);
+            // 
             // groupBoxModifierCritere
             // 
             this.groupBoxModifierCritere.Controls.Add(this.buttonModifierCritere);
@@ -276,6 +286,16 @@
             this.groupBoxModifierCritere.TabStop = false;
             this.groupBoxModifierCritere.Text = "Modifier Critère";
             this.groupBoxModifierCritere.Visible = false;
+            // 
+            // buttonModifierCritere
+            // 
+            this.buttonModifierCritere.Location = new System.Drawing.Point(63, 117);
+            this.buttonModifierCritere.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonModifierCritere.Name = "buttonModifierCritere";
+            this.buttonModifierCritere.Size = new System.Drawing.Size(105, 19);
+            this.buttonModifierCritere.TabIndex = 0;
+            this.buttonModifierCritere.Text = "Modifier Critère";
+            this.buttonModifierCritere.Click += new System.EventHandler(this.buttonModifierCritere_Click_1);
             // 
             // label4
             // 
@@ -306,25 +326,14 @@
             // 
             this.textBoxNom.Location = new System.Drawing.Point(91, 39);
             this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.ReadOnly = true;
             this.textBoxNom.Size = new System.Drawing.Size(100, 20);
             this.textBoxNom.TabIndex = 3;
-            // 
-            // buttonModifierCritere
-            // 
-            this.buttonModifierCritere.Location = new System.Drawing.Point(116, 111);
-            this.buttonModifierCritere.Name = "buttonModifierCritere";
-            this.buttonModifierCritere.Size = new System.Drawing.Size(75, 23);
-            this.buttonModifierCritere.TabIndex = 8;
-            this.buttonModifierCritere.Text = "Modifier";
-            this.buttonModifierCritere.UseVisualStyleBackColor = true;
-            this.buttonModifierCritere.Click += new System.EventHandler(this.buttonModifierCritere_Click);
             // 
             // OffreCritereDRH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 503);
+            this.ClientSize = new System.Drawing.Size(900, 644);
             this.Controls.Add(this.groupBoxModifierCritere);
             this.Controls.Add(this.groupBoxDate);
             this.Controls.Add(this.groupBoxCritere);
@@ -372,5 +381,6 @@
         private System.Windows.Forms.TextBox textBoxCoeff;
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.Button buttonModifierCritere;
+        private System.Windows.Forms.ListBox listBoxOffreID;
     }
 }

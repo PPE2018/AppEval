@@ -36,5 +36,15 @@ namespace AppEval
             }
             this.Hide();
         }
+
+        private void Authentification_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listeRH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

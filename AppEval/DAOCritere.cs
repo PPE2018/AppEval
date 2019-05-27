@@ -39,13 +39,17 @@ namespace AppEval
         }
         public static void SupprimerCritere(string libelleCrit, int unIdOffre)
         {
+            //connect à la bdd de posgres
             var connString = "Host=localhost;Port=4747;Username=openpg;Password=;Database=BddAppEval";
             
+           
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
                 int idC = 0;
                 int association = 0;
+
+                //on récupère l'ensemble des données qui se trouve dans la table critère et associer pour ensuite les supprimer dans le forms Offres
                 using (NpgsqlCommand cmd0 = new NpgsqlCommand("SELECT id_critere FROM critere WHERE libelle_critere = '" + libelleCrit + "';", conn))
                 using (NpgsqlDataReader reader = cmd0.ExecuteReader())
                 {
@@ -56,7 +60,7 @@ namespace AppEval
                 }
 
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT (id_offre) FROM associer WHERE id_critere=" + idC + ";", conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand("SELECT COUNT (id_critere) FROM associer WHERE id_critere=" + idC + ";", conn))
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -67,13 +71,14 @@ namespace AppEval
 
                 NpgsqlCommand cmd1 = new NpgsqlCommand("DELETE FROM associer WHERE id_critere = " + idC + " AND id_offre=" + unIdOffre,conn);
                 cmd1.ExecuteNonQuery();
-
                 if (association == 1)
                 {
+                    
                     NpgsqlCommand cmd3 = new NpgsqlCommand("DELETE FROM noter WHERE id_critere=" + idC, conn);
                     cmd3.ExecuteNonQuery();
                     NpgsqlCommand cmd2 = new NpgsqlCommand("DELETE FROM critere WHERE id_critere = " + idC, conn);
                     cmd2.ExecuteNonQuery();
+
 
                 }
                 else
@@ -93,6 +98,8 @@ namespace AppEval
             {
                 // connect à la bdd
                 conn.Open();
+
+                //on récupère les données nécessaire pour les mettre dans le dictionnaire
                 using (var cmd2 = new NpgsqlCommand("SELECT libelle_critere, coefficient FROM critere C INNER JOIN associer A ON A.id_critere= C.id_critere WHERE C.id_critere= (SELECT id_critere FROM CRITERE WHERE libelle_critere = '"+libelle+"') AND id_offre="+idOffre, conn))
                 using (var reader = cmd2.ExecuteReader())
                     while (reader.Read())
@@ -109,7 +116,7 @@ namespace AppEval
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {
                 conn.Open();
-                // modifier le coeff
+                // modifier le coeff dans le forms Offres
                 using (var cmd = new NpgsqlCommand())
                 {
                     cmd.Connection = conn;
@@ -124,6 +131,7 @@ namespace AppEval
 
         public static List<Critere> GetLesCriteresByOffre(int unIdOffre)
         {
+            //permet d'associer une offre à un ou plusieurs critères dans le form offre
             List<Critere> listCritere = new List<Critere>();
             using (var conn = new NpgsqlConnection(Connexion.Connecter()))
             {

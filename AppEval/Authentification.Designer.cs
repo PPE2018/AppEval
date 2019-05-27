@@ -41,6 +41,7 @@
             this.listeRH.Name = "listeRH";
             this.listeRH.Size = new System.Drawing.Size(164, 303);
             this.listeRH.TabIndex = 0;
+            this.listeRH.SelectedIndexChanged += new System.EventHandler(this.listeRH_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -71,6 +72,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Authentification";
             this.Text = "Authentification";
+            this.Load += new System.EventHandler(this.Authentification_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
