@@ -30,7 +30,7 @@ namespace AppEval
             {
                 cmd1.ExecuteNonQuery();
             }
-
+            
             using (NpgsqlCommand cmd2 = new NpgsqlCommand("SELECT N.nom_cand, N.prenom_cand, M.notemoyenne,N.noteTotal, N.nom_prenom_rh FROM NoteRH N INNER JOIN NoteMoy M ON M.nom_cand = N.nom_cand AND M.prenom_cand = N.prenom_cand ORDER BY  M.notemoyenne, N.nom_cand, N.prenom_cand ; ", conn))
             using (NpgsqlDataReader reader = cmd2.ExecuteReader())
             {
