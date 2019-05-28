@@ -48,13 +48,14 @@ namespace AppEval.ServiceReference1 {
     public partial class exportOffreListRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public string search;
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string id;
         
         public exportOffreListRequest() {
         }
         
-        public exportOffreListRequest(string search) {
-            this.search = search;
+        public exportOffreListRequest(string id) {
+            this.id = id;
         }
     }
     
@@ -65,13 +66,13 @@ namespace AppEval.ServiceReference1 {
     public partial class exportOffreListResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public string export;
+        public string xml;
         
         public exportOffreListResponse() {
         }
         
-        public exportOffreListResponse(string export) {
-            this.export = export;
+        public exportOffreListResponse(string xml) {
+            this.xml = xml;
         }
     }
     
@@ -82,13 +83,14 @@ namespace AppEval.ServiceReference1 {
     public partial class exportCandidatureListRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public string search;
+        [System.Xml.Serialization.SoapElementAttribute(DataType="integer")]
+        public string id;
         
         public exportCandidatureListRequest() {
         }
         
-        public exportCandidatureListRequest(string search) {
-            this.search = search;
+        public exportCandidatureListRequest(string id) {
+            this.id = id;
         }
     }
     
@@ -99,13 +101,13 @@ namespace AppEval.ServiceReference1 {
     public partial class exportCandidatureListResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
-        public string export;
+        public string xml;
         
         public exportCandidatureListResponse() {
         }
         
-        public exportCandidatureListResponse(string export) {
-            this.export = export;
+        public exportCandidatureListResponse(string xml) {
+            this.xml = xml;
         }
     }
     
@@ -149,11 +151,11 @@ namespace AppEval.ServiceReference1 {
             return base.Channel.exportOffreList(request);
         }
         
-        public string exportOffreList(string search) {
+        public string exportOffreList(string id) {
             AppEval.ServiceReference1.exportOffreListRequest inValue = new AppEval.ServiceReference1.exportOffreListRequest();
-            inValue.search = search;
+            inValue.id = id;
             AppEval.ServiceReference1.exportOffreListResponse retVal = ((AppEval.ServiceReference1.sioservicePort)(this)).exportOffreList(inValue);
-            return retVal.export;
+            return retVal.xml;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -161,9 +163,9 @@ namespace AppEval.ServiceReference1 {
             return base.Channel.exportOffreListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AppEval.ServiceReference1.exportOffreListResponse> exportOffreListAsync(string search) {
+        public System.Threading.Tasks.Task<AppEval.ServiceReference1.exportOffreListResponse> exportOffreListAsync(string id) {
             AppEval.ServiceReference1.exportOffreListRequest inValue = new AppEval.ServiceReference1.exportOffreListRequest();
-            inValue.search = search;
+            inValue.id = id;
             return ((AppEval.ServiceReference1.sioservicePort)(this)).exportOffreListAsync(inValue);
         }
         
@@ -172,11 +174,11 @@ namespace AppEval.ServiceReference1 {
             return base.Channel.exportCandidatureList(request);
         }
         
-        public string exportCandidatureList(string search) {
+        public string exportCandidatureList(string id) {
             AppEval.ServiceReference1.exportCandidatureListRequest inValue = new AppEval.ServiceReference1.exportCandidatureListRequest();
-            inValue.search = search;
+            inValue.id = id;
             AppEval.ServiceReference1.exportCandidatureListResponse retVal = ((AppEval.ServiceReference1.sioservicePort)(this)).exportCandidatureList(inValue);
-            return retVal.export;
+            return retVal.xml;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -184,9 +186,9 @@ namespace AppEval.ServiceReference1 {
             return base.Channel.exportCandidatureListAsync(request);
         }
         
-        public System.Threading.Tasks.Task<AppEval.ServiceReference1.exportCandidatureListResponse> exportCandidatureListAsync(string search) {
+        public System.Threading.Tasks.Task<AppEval.ServiceReference1.exportCandidatureListResponse> exportCandidatureListAsync(string id) {
             AppEval.ServiceReference1.exportCandidatureListRequest inValue = new AppEval.ServiceReference1.exportCandidatureListRequest();
-            inValue.search = search;
+            inValue.id = id;
             return ((AppEval.ServiceReference1.sioservicePort)(this)).exportCandidatureListAsync(inValue);
         }
     }

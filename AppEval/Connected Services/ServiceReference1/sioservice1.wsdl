@@ -11,16 +11,16 @@
     <wsdl:part name="status" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="exportOffreListRequest">
-    <wsdl:part name="search" type="xsd:string" />
+    <wsdl:part name="id" type="xsd:integer" />
   </wsdl:message>
   <wsdl:message name="exportOffreListResponse">
-    <wsdl:part name="export" type="xsd:string" />
+    <wsdl:part name="xml" type="xsd:string" />
   </wsdl:message>
   <wsdl:message name="exportCandidatureListRequest">
-    <wsdl:part name="search" type="xsd:string" />
+    <wsdl:part name="id" type="xsd:integer" />
   </wsdl:message>
   <wsdl:message name="exportCandidatureListResponse">
-    <wsdl:part name="export" type="xsd:string" />
+    <wsdl:part name="xml" type="xsd:string" />
   </wsdl:message>
   <wsdl:portType name="sioservicePort">
     <wsdl:operation name="connect">
@@ -67,9 +67,9 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="sioserviceSvc">
-    <documentation>Offre et candidature</documentation>
+    <documentation>Test Cours SLAM3</documentation>
     <wsdl:port name="sioservicePort" binding="typens:sioserviceBinding">
-      <soap:address location="http://localhost/projetppe/web_service/sioservice.php" />
+      <soap:address location="http://localhost:8181/projetppe/web_service/sioservice.php" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
